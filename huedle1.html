@@ -6,8 +6,29 @@
         <script src = "huedle1.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+		<h1>Huedle!</h1>
     </head>
     <body>
-
+		<div id="circle">
+			<canvas id="circleCanvas" width="1000" height="700"></canvas> 
+		</div>
+		<div id="input-div">
+			<div id = "labels-div">
+				<p class="label">r</p>
+				<p class="label">g</p>
+				<p class="label">b</p>
+			</div>
+			<div id="inputs-boxes-div">
+				<input class="input-box" id="x1" type="number" min="0" max="255" minlength="1" maxlength="3" size="3">
+				<input class="input-box" id="y1" type="number" min="0" max="255" minlength="1" maxlength="3" size="3">
+				<input class="input-box" id="x2" type="number" min="0" max="255" minlength="1" maxlength="3" size="3">
+			</div>
+			<button id="button" onclick="checkRGB()">
+				click to check the RGB values guess!
+			</button>
+		</div>
+		<script>
+			run()
+		</script>
     </body>
 </html>
