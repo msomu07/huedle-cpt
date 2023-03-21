@@ -1,7 +1,8 @@
 /* GENERAL */
 
 * {
-    color: white
+    color: white;
+    text-shadow: 2px 2px 4px whitesmoke;
 }
 
 body {
@@ -49,6 +50,10 @@ body {
 
 h1, h2 {
     font-family: motley-forces;
+    
+    animation-name: title-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 }
 
 h1 {
@@ -56,10 +61,6 @@ h1 {
     text-align: center;
     margin-top: 200px;
     margin-bottom: 40px;
-
-    animation-name: title-animation;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
 }
 
 button, a {
@@ -134,5 +135,24 @@ button:hover {
 
 /* INSTRUCTIONS */
 .instructions {
-    
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 80px;
+    height: 600px;
+    padding: 40px;
+    padding-top: 10px;
+    font-size: 25px;
+
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+
+    animation-name: button-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+p {
+    text-align: left;
 }

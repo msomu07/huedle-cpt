@@ -6,29 +6,52 @@
         <script src = "huedle1.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<h1>Huedle!</h1>
     </head>
     <body>
+        <div class = "header">
+            <h2>HUEDLE</h2>
+            <a href="index.html">home</a>
+        </div>
 		<div id="circle">
 			<canvas id="circleCanvas" width="1000" height="700"></canvas> 
 		</div>
-		<div id="input-div">
-			<div id = "labels-div">
-				<p class="label">r</p>
-				<p class="label">g</p>
-				<p class="label">b</p>
+		<div class="input-div">
+			<div id="guess1-div">
+				<input class="input-box" id="r1" type="number" min="0" max="255" required>
+                <input class="input-box" id="g1" type="number" min="0" max="255" required>
+                <input class="input-box" id="b1" type="number" min="0" max="255" required>
+
+            </div>
+            <div id="guess2">
+				<input class="input-box" id="r2" type="number" min="0" max="255" required>
+				<input class="input-box" id="g2" type="number" min="0" max="255" required>
+				<input class="input-box" id="b2" type="number" min="0" max="255" required>
 			</div>
-			<div id="inputs-boxes-div">
-				<input class="input-box" id="x1" type="number" min="0" max="255" minlength="1" maxlength="3" size="3">
-				<input class="input-box" id="y1" type="number" min="0" max="255" minlength="1" maxlength="3" size="3">
-				<input class="input-box" id="x2" type="number" min="0" max="255" minlength="1" maxlength="3" size="3">
+            <div id="guess3">
+				<input class="input-box" id="r3" type="number" min="0" max="255" required>
+				<input class="input-box" id="g3" type="number" min="0" max="255" required>
+				<input class="input-box" id="b3" type="number" min="0" max="255" required>
 			</div>
-			<button id="button" onclick="checkRGB()">
-				click to check the RGB values guess!
-			</button>
+            <div id="guess4">
+				<input class="input-box" id="r4" type="number" min="0" max="255" required>
+				<input class="input-box" id="g4" type="number" min="0" max="255" required>
+				<input class="input-box" id="b4" type="number" min="0" max="255" required>
+			</div>
+            <div id="guess5">
+				<input class="input-box" id="r5" type="number" min="0" max="255" required>
+				<input class="input-box" id="g5" type="number" min="0" max="255" required>
+				<input class="input-box" id="b5" type="number" min="0" max="255" required>
+			</div>
+            <div id="guess6">
+				<input class="input-box" id="r6" type="number" min="0" max="255" required>
+				<input class="input-box" id="g6" type="number" min="0" max="255" required>
+				<input class="input-box" id="b6" type="number" min="0" max="255" required>
+			</div>
+            <!-- add error for invalid number -->
+			<button type="submit" onclick="checkRGB()">click to check</button>
 		</div>
 		<script>
-			run()
+			run();
 		</script>
     </body>
 </html>

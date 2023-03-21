@@ -1,22 +1,159 @@
+
+@font-face {
+    font-family: motley-forces;
+    src: url(MotleyForcesRegular-w1rZ3.ttf);
+}
+  
+@font-face {
+    font-family: shalma;
+    src: url(Shalma-Rp0Pe.otf);
+}
+
+* {
+    color: white;
+}
+
 body {
 	background-color: black;
 }
 
-h1 {
-	text-align: center;
-	font-size: 60px;
-	color: white;
+@keyframes button-animation {
+    0%   {border-color:#fc605b; color:#fc605b; left:0px; top:0px;}
+    10%  {border-color:#fcb15b; color:#fcb15b; left:200px; top:0px;}
+    20%  {border-color:#fce75b; color:#fce75b; left:200px; top:200px;}
+    30%  {border-color:#c7e8ae; color:#c7e8ae; left:200px; top:200px;}
+    40%  {border-color:#a3d1a6; color:#a3d1a6; left:0px; top:200px;}
+    50%  {border-color:#add9d1; color:#add9d1; left:0px; top:200px;}
+    60%  {border-color:#a3c4e6; color:#a3c4e6; left:0px; top:0px;}
+    70%  {border-color:#a3aae6; color:#a3aae6; left:0px; top:0px;}
+    80%  {border-color:#c3a3e6; color:#c3a3e6; left:0px; top:0px;}
+    90%  {border-color:#e1a3e6; color:#e1a3e6; left:0px; top:0px;}
+    100% {border-color:#fc605b; color:#fc605b; left:0px; top:0px;}
+}
+
+@keyframes title-animation {
+    0%   {color:#fc605b; left:0px; top:0px;}
+    10%  {color:#fcb15b; left:200px; top:0px;}
+    20%  {color:#fce75b; left:200px; top:200px;}
+    30%  {color:#c7e8ae; left:200px; top:200px;}
+    40%  {color:#a3d1a6; left:0px; top:200px;}
+    50%  {color:#add9d1; left:0px; top:200px;}
+    60%  {color:#a3c4e6; left:0px; top:0px;}
+    70%  {color:#a3aae6; left:0px; top:0px;}
+    80%  {color:#c3a3e6; left:0px; top:0px;}
+    90%  {color:#e1a3e6; left:0px; top:0px;}
+    100% {color:#fc605b; left:0px; top:0px;}
+}
+
+.header {
+    margin-bottom: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 120px;
+}
+
+.header h2 {
+    font-family: motley-forces;
+    float: left;
+    margin-top: 30px;
+    padding-left: 40px;
+    font-size: 5.0em;
+
+    animation-name: title-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.header a {
+    float: right;
+    padding-right: 50px;
+    margin-top: 30px;
+    font-size:  10.0em;
+}
+
+a {
+    font-family: shalma;
+    font-size:  3.8em;
+    outline: none;
+    text-decoration: none;
+
+    /* animation code from stack overflow */
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+a:hover {
+    animation-name: title-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 }
 
 #circleCanvas{
 	position: absolute;
+    top: 180px;
+    left: 5%;
 }
 
-#input-div{
-	float: right;
-	margin-right: 20%;
+.input-div{
+    position: absolute;
+	top: 180px;
+    left: 60%;
 }
 
 .input-box{
-	font-size: 20px;
+	font-size: 30px;
+    margin: 10px;
+    margin-top: 20px;
+    background-color:  black;
+    text-align: center;
+
+    width: 40px;
+    height: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 40px;
+    padding-bottom: 20px;
+
+    font-family: shalma;
+    font-size:  8.0em;
+    outline: none;
+    text-decoration: none;
+
+}
+
+button {
+    background-color:  black;
+    color: white;
+    width: 400px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    margin-top: 20px;
+    padding-top: 30px;
+
+    font-family: shalma;
+    font-size:  8.0em;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+
+    /* animation code from stack overflow */
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+button:hover {
+    animation-name: button-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 }
