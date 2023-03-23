@@ -156,3 +156,8 @@ button:hover {
     animation-duration: 10s;
     animation-iteration-count: infinite;
 }
+
+#message {
+	margin-top: 750px;
+	margin-left: 150px;
+}
