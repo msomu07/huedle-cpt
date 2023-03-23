@@ -109,16 +109,15 @@ a:hover {
     margin-top: 20px;
     background-color:  black;
     text-align: center;
+    padding-top: 10px;
 
-    width: 40px;
-    height: 10px;
+    width: 120px;
+    height: 50px;
     border-width: 3px;
     border-style: solid;
     border-color: white;
     border-radius: 30px;
     margin-top: 10px;
-    padding: 40px;
-    padding-bottom: 20px;
 
     font-family: shalma;
     font-size:  8.0em;
