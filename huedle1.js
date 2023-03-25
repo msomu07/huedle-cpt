@@ -9,7 +9,6 @@ let turnCounter = 0; //counts the number of turns for the labels
 let message = "";
 
 //raw input variables
-
 //guess 1
 let r1Input;
 let g1Input;
@@ -40,7 +39,16 @@ let r6Input;
 let g6Input;
 let b6Input;
 
-var valid;
+var valid; //boolean checks if the input is valid
+
+//circle colors
+let guessColor1 = "black";
+let guessColor2 = "black";
+let guessColor3 = "black";
+let guessColor4 = "black";
+let guessColor5 = "black";
+let guessColor6 = "black";
+
 
 function guess() { // numberentered
 	++turnCounter;
@@ -91,9 +99,9 @@ function guess() { // numberentered
 	}
 
 	if (turnCounter == 6) {
-		r6Input = document.getElementById("r1").value;
-		g6Input = document.getElementById("g1").value;
-		b6Input = document.getElementById("b1").value;
+		r6Input = document.getElementById("r6").value;
+		g6Input = document.getElementById("g6").value;
+		b6Input = document.getElementById("b6").value;
 
 		valid = isValid(r6Input, b6Input, g6Input);
 		checkRGB(r6Input, g6Input, b6Input);
@@ -101,9 +109,9 @@ function guess() { // numberentered
 }
 
 function run() {
-	selectRGB();
-	answerColor = "rgb(" + answerValues[0] + ", " + answerValues[1] + ", " + answerValues[2] + ")";
-	generateCircle("black", "black", "black", "black", "black");
+	selectRGB(); //selects answer color
+	answerColor = "rgb(" + answerValues[0] + ", " + answerValues[1] + ", " + answerValues[2] + ")"; //prints the rgb values 	
+	generateCircle(guessColor1, guessColor2, guessColor3, guessColor4, guessColor5, guessColor6); //initializes circle values to all black
 	document.getElementById("message").innerHTML += answerColor + " turn " + turnCounter + "<br>";
 }
 
@@ -120,9 +128,35 @@ function isValid(r, g, b) {
 function checkRGB(r, g, b) { //checks how accurate rgb is
 	let errorMessage = "!isvalid error <br>"; // error;*/
 	//if (valid) {
-		document.getElementById("message").innerHTML += "r: " + checkR(r) + "<br>"; //checks r guess
-		document.getElementById("message").innerHTML += "g: " + checkG(g) + "<br>"; //checks g guess
-		document.getElementById("message").innerHTML += "b: " + checkB(b) + "<br>"; //checks b guess
+		let thisR = checkR(r);
+		let thisG = checkG(g);
+		let thisB = checkB(b);
+		
+		document.getElementById("message").innerHTML += "r: " + thisR + "<br>"; //checks r guess
+		document.getElementById("message").innerHTML += "g: " + thisG + "<br>"; //checks g guess
+		document.getElementById("message").innerHTML += "b: " + thisB + "<br>"; //checks b guess
+		
+		let thisColor = "rgb(" + r + "," + g + "," + b + ")";
+		document.getElementById("message").innerHTML += "color: " + thisColor + "<br>";
+		
+		if(turnCounter == 1)
+			guessColor1 = thisColor;
+		if(turnCounter == 2)
+			guessColor2 = thisColor;
+		if(turnCounter == 3)
+			guessColor3 = thisColor;
+		if(turnCounter == 4)
+			guessColor4 = thisColor;
+		if(turnCounter == 5)
+			guessColor5 = thisColor;
+		if(turnCounter == 6)
+			guessColor6 = thisColor;
+			
+		generateCircle(guessColor1, guessColor2, guessColor3, guessColor4, guessColor5, guessColor6);
+		
+		document.getElementById("r" + turnCounter).style.backgroundColor = thisR;  
+		document.getElementById("g" + turnCounter).style.backgroundColor = thisG;  
+		document.getElementById("b" + turnCounter).style.backgroundColor = thisB;  
 	//}
 	/*else
 		document.getElementById("message").innerHTML += errorMessage;*/
