@@ -1,7 +1,8 @@
 /* Ideas!
- * make the text of the guesses change color depending on how close they are to the correct answer (abs difference)
- * when guess is within 5, it turns green
- * when guess is exact, it turns yellow!
+ * add modals
+ * add an instructions modal that displays the color key diagram thing
+ * the win/lose modal should contain the exact answer values
+ * make input boxes unclickable after button has been pressed***
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 let answerValues = []; //an array containing the r, g, and b values of the answer color
 let answerColor = ""; //answer color
