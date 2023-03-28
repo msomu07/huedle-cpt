@@ -132,6 +132,11 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		let thisR = checkR(r);
 		let thisG = checkG(g);
 		let thisB = checkB(b);
+
+		if (thisR == "#00cc66" && thisG == "#00cc66" && thisB == "#00cc66")
+			win()
+			
+		//document.getElementById("message").innerHTML += "YO WON OMG" + "<br>";
 		
 		document.getElementById("message").innerHTML += "r: " + thisR + "<br>"; //checks r guess
 		document.getElementById("message").innerHTML += "g: " + thisG + "<br>"; //checks g guess
@@ -158,69 +163,82 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		document.getElementById("r" + turnCounter).style.backgroundColor = thisR;  
 		document.getElementById("g" + turnCounter).style.backgroundColor = thisG;  
 		document.getElementById("b" + turnCounter).style.backgroundColor = thisB;  
+
 	//}
 	/*else
 		document.getElementById("message").innerHTML += errorMessage;*/
 }
 
+function win() {
+	var modal = document.getElementById("myModal");
+	var span = document.getElementsByClassName("close")[0];
+
+	document.getElementById("win-message").innerHTML = "YOU WIN!!!";
+
+	modal.style.display = "block";
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+}
+
 function checkR(rVal) { //checks r value
-	if (Math.abs(rVal - answerValues[0]) == 0) //if guess is exact --> yellow
-		return "yellow";
 	if (Math.abs(rVal - answerValues[0]) <= 5) //if guess is correct --> green
-		return "green";
-	if (Math.abs(rVal - answerValues[0]) <= 15) //if guess is rlly close --> dark red
-		return "darkred";
-	if (Math.abs(rVal - answerValues[0]) <= 25) //if guess is pretty close --> red
-		return "red";
-	if (Math.abs(rVal - answerValues[0]) <= 50) //if guess is close --> purple
-		return "purple";
-	if (Math.abs(rVal - answerValues[0]) <= 100) //if guess is far --> slateblue
-		return "slateblue";
-	if (Math.abs(rVal - answerValues[0]) <= 150) //if guess is pretty far --> blue
-		return "blue";
-	if (Math.abs(rVal - answerValues[0]) <= 200) //if guess is really far --> light blue
-		return "lightblue";
-	return "white"; //if guess is way off --> white
+		return "#00cc66";
+	if (Math.abs(rVal - answerValues[0]) <= 15) //if guess is rlly close --> red
+		return "#ff3300";
+	if (Math.abs(rVal - answerValues[0]) <= 25) //if guess is pretty close --> organey pink
+		return "#ff6666";
+	if (Math.abs(rVal - answerValues[0]) <= 50) //if guess is close --> pink
+		return "#ff66ff";
+	if (Math.abs(rVal - answerValues[0]) <= 100) //if guess is far --> purple
+		return "#9966ff";
+	if (Math.abs(rVal - answerValues[0]) <= 150) //if guess is pretty far --> blueish purple
+		return "#6666ff";
+	if (Math.abs(rVal - answerValues[0]) <= 200) //if guess is really far -->  blue
+		return "#3399ff";
+	return "#99ccff"; //if guess is way off --> light blue
 }
 
 function checkG(gVal) { //checks g value
-	if (Math.abs(gVal - answerValues[1]) == 0)
-		return "yellow";
 	if (Math.abs(gVal - answerValues[1]) <= 5)
-		return "green";
+		return "#00cc66"; // if guess is correct --> green
 	if (Math.abs(gVal - answerValues[1]) <= 15)
-		return "darkred";
+		return "#ff3300"; // if guess is rlly close --> red
 	if (Math.abs(gVal - answerValues[1]) <= 25)
-		return "red";
+		return "#ff6666"; // if guess is pretty close --> organey pink
 	if (Math.abs(gVal - answerValues[1]) <= 50)
-		return "purple";
+		return "#ff66ff"; // if guess is close --> pink
 	if (Math.abs(gVal - answerValues[1]) <= 100)
-		return "slateblue";
+		return "#9966ff"; // if guess is far -->  purple
 	if (Math.abs(gVal - answerValues[1]) <= 150)
-		return "blue";
+		return "#6666ff"; // if guess is pretty far --> blueish purple
 	if (Math.abs(gVal - answerValues[1]) <= 200)
-		return "lightblue";
-	return "white";
+		return "#3399ff"; // if guess is really far --> blue
+	return "#99ccff"; // if guess is way off --> light blue
 }
 
 function checkB(bVal) { //checks b value
-	if (Math.abs(bVal - answerValues[2]) == 0)
-		return "yellow";
 	if (Math.abs(bVal - answerValues[2]) <= 5)
-		return "green";
+		return "#00cc66"; // if guess is correct --> green
 	if (Math.abs(bVal - answerValues[2]) <= 15)
-		return "darkred";
+		return "#ff3300"; // if guess is rlly close --> red
 	if (Math.abs(bVal - answerValues[2]) <= 25)
-		return "red";
+		return "#ff6666"; // if guess is pretty close --> organey pink
 	if (Math.abs(bVal - answerValues[2]) <= 50)
-		return "purple";
+		return "#ff66ff"; // if guess is close --> pink
 	if (Math.abs(bVal - answerValues[2]) <= 100)
-		return "slateblue";
+		return "#9966ff"; // if guess is far -->  purple
 	if (Math.abs(bVal - answerValues[2]) <= 150)
-		return "blue";
+		return "#6666ff"; // if guess is pretty far --> blueish purple
 	if (Math.abs(bVal - answerValues[2]) <= 200)
-		return "lightblue";
-	return "white";
+		return "#3399ff"; // if guess is really far --> blue
+	return "#99ccff"; // if guess is way off --> light blue
 }
 
 /* generating circle and color to guess */

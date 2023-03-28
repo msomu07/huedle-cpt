@@ -15,7 +15,12 @@
 		<div id="circle">
 			<canvas id="circleCanvas" width="1000" height="700"></canvas> 
 		</div>
-		<div id = "color-guide"></div>
+		<!--<div id = "color-guide"></div>-->
+		<div class="labels">
+			<p id="r">r</p>
+			<p id="g">g</p>
+			<p id="b">b</p>
+		</div>
 		<div id="input-div">
 			<div id="guess1">
 				<input class="input" id="r1" type="number" min="0" max="255" size="3">
@@ -52,6 +57,16 @@
 			<button type="submit" onclick="guess()">click to check</button>
 		</div>
 		<p id="message"></p>
+
+		<!-- Win Modal -->
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<p id="win-message"></p>
+				<a href="menu.html" id="play-again">play again</a>
+				<a href="index.html" id="quit">quit</a>
+			</div>
+		</div>
+
 		<script>
 			run();
 		</script>
