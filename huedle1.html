@@ -11,11 +11,12 @@
         <div class = "header">
             <h2>HUEDLE</h2>
             <a href="index.html">home</a>
+			<button id="instructions" onclick="instructions()">instructions</button>>
         </div>
 		<div id="circle">
 			<canvas id="circleCanvas" width="1000" height="700"></canvas> 
 		</div>
-		<!--<div id = "color-guide"></div>-->
+		<div id = "color-guide"></div>
 		<div class="labels">
 			<p id="r">r</p>
 			<p id="g">g</p>
@@ -59,7 +60,7 @@
 		<p id="message"></p>
 
 		<!-- Win Modal -->
-		<div id="myModal" class="modal">
+		<div id="winModal" class="modal">
 			<div class="modal-content">
 				<p id="win-message"></p>
 				<a href="menu.html" id="play-again">play again</a>
@@ -67,6 +68,23 @@
 			</div>
 		</div>
 
+		<!-- Lose Modal -->
+		<div id="loseModal" class="modal">
+			<div class="modal-content">
+				<p id="lose-message"></p>
+				<a href="menu.html" id="play-again">play again</a>
+				<a href="index.html" id="quit">quit</a>
+			</div>
+		</div>
+
+		<!-- Instructions Modal -->
+		<div id="instructionModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div id = "instructions-color-guide"></div>
+				<p id="instruction-message"></p>
+			</div>
+		</div>
 		<script>
 			run();
 		</script>

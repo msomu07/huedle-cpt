@@ -63,11 +63,31 @@ body {
     animation-iteration-count: infinite;
 }
 
-.header a {
+.header a{
     float: right;
     padding-right: 50px;
     margin-top: 30px;
     font-size:  10.0em;
+}
+
+.header #instructions {
+    width: 10px;
+    height: 10px;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+
+    float: right;
+    padding-right: 300px;
+    margin-top: 30px;
+    font-size:  10.0em;
+
+    /* animation code from stack overflow */
+    -o-transition: none;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
 }
 
 a {
@@ -84,7 +104,7 @@ a {
     transition:.5s;
 }
 
-a:hover {
+a:hover,  #instructions:hover {
     animation-name: title-animation;
     animation-duration: 10s;
     animation-iteration-count: infinite;
@@ -98,7 +118,7 @@ a:hover {
 
 #input-div{
     position: absolute;
-	top: 220px;
+	top: 250px;
     left: 60%;
 }
 
@@ -163,9 +183,26 @@ button:hover {
 
 #color-guide {
     height: 20px;
-    width: 410px;
+    width: 350px;
     float: right;
-    margin-right: 38px;
+    margin-right: 60px;
+    margin-bottom: 200px;
+    background: linear-gradient(to right, 
+    #00cc66 0%, 
+    #ff3300 14.29%,
+    #ff6666 28.57%,
+    #ff66ff 42.86%,
+    #9966ff 57.14%,
+    #6666ff 71.43%,
+    #3399ff 85.71%,
+    #99ccff 100%);
+}
+
+#instructions-color-guide {
+    height: 40px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     background: linear-gradient(to right, 
     #00cc66 0%, 
     #ff3300 14.29%,
@@ -181,7 +218,8 @@ button:hover {
     float: right;
     font-family: shalma;
     font-size: 130px;
-    margin-right: 5%;
+    margin-right: -350px;
+    margin-top: 40px;
 }
 
 .labels #r {
@@ -284,4 +322,21 @@ button:hover {
     animation-name: title-animation;
     animation-duration: 10s;
     animation-iteration-count: infinite;
+}
+
+#lose-message {
+    text-align: center;
+    color: black;
+    font-family: motley-forces;
+    font-size:  10.0em;
+
+    animation-name: title-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+#instruction-message {
+    text-align: center;
+    color: black;
+    text-align: left;
 }

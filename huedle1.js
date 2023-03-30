@@ -134,7 +134,9 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		let thisB = checkB(b);
 
 		if (thisR == "#00cc66" && thisG == "#00cc66" && thisB == "#00cc66")
-			win()
+			win();
+		if (thisR != "#00cc66" && thisG != "#00cc66" && thisB != "#00cc66" && turnCounter == 6)
+			lose();
 			
 		//document.getElementById("message").innerHTML += "YO WON OMG" + "<br>";
 		
@@ -170,11 +172,47 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 }
 
 function win() {
-	var modal = document.getElementById("myModal");
+	var modal = document.getElementById("winModal");
 	var span = document.getElementsByClassName("close")[0];
 
 	document.getElementById("win-message").innerHTML = "YOU WIN!!!";
 
+	modal.style.display = "block";
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+}
+
+function lose() {
+	var modal = document.getElementById("loseModal");
+	var span = document.getElementsByClassName("close")[0];
+
+	document.getElementById("lose-message").innerHTML = "YOU LOSE!!!";
+
+	modal.style.display = "block";
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+}
+
+function instructions() {
+	var modal = document.getElementById("instructionModal");
+	var span = document.getElementsByClassName("close")[0];
+
+	document.getElementById("instruction-message").innerHTML = "simple instructions";
+	
 	modal.style.display = "block";
 	span.onclick = function() {
 		modal.style.display = "none";
