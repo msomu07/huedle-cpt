@@ -1,118 +1,85 @@
-/* Ideas!
- * add modals
- * add an instructions modal that displays the color key diagram thing
- * the win/lose modal should contain the exact answer values
- * make input boxes unclickable after button has been pressed***
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 let answerValues = []; //an array containing the r, g, and b values of the answer color
 let answerColor = ""; //answer color
 let turnCounter = 0; //counts the number of turns for the labels
 let message = "";
 
 //raw input variables
-//guess 1
-let r1Input;
-let g1Input;
-let b1Input;
-
-//guess 2
-let r2Input;
-let g2Input;
-let b2Input;
-
-//guess 3
-let r3Input;
-let g3Input;
-let b3Input;
-
-//guess 4
-let r4Input;
-let g4Input;
-let b4Input;
-
-//guess 5
-let r5Input;
-let g5Input;
-let b5Input;
-
-//guess 6
-let r6Input;
-let g6Input;
-let b6Input;
+//input from each guess
+let guess1Input = [];
+let guess2Input = [];
+let guess3Input = [];
+let guess4Input = [];
+let guess5Input = [];
+let guess6Input = [];
 
 var valid; //boolean checks if the input is valid
 
-//circle colors
-let guessColor1 = "black";
-let guessColor2 = "black";
-let guessColor3 = "black";
-let guessColor4 = "black";
-let guessColor5 = "black";
-let guessColor6 = "black";
+//initializes circle sector colors to black
+let guessColors = ["black", "black", "black", "black", "black", "black"];
 
 
 function guess() { // numberentered
 	++turnCounter;
 	document.getElementById("message").innerHTML += "turn " + turnCounter + "<br>";
 	if (turnCounter == 1) {
-		r1Input = document.getElementById("r1").value;
-		g1Input = document.getElementById("g1").value;
-		b1Input = document.getElementById("b1").value;
+		guess1Input[0] = document.getElementById("r1").value;
+		guess1Input[1] = document.getElementById("g1").value;
+		guess1Input[2] = document.getElementById("b1").value;
 
-		valid = isValid(r1Input, b1Input, g1Input);
-		checkRGB(r1Input, g1Input, b1Input);
+		valid = isValid(guess1Input[0], guess1Input[1], guess1Input[2]);
+		checkRGB(guess1Input[0], guess1Input[1], guess1Input[2]);
 	}
 
 	if (turnCounter == 2) {
-		r2Input = document.getElementById("r2").value;
-		g2Input = document.getElementById("g2").value;
-		b2Input = document.getElementById("b2").value;
+		guess2Input[0] = document.getElementById("r2").value;
+		guess2Input[1] = document.getElementById("g2").value;
+		guess2Input[2] = document.getElementById("b2").value;
 
-		valid = isValid(r2Input, b2Input, g2Input);
-		checkRGB(r2Input, g2Input, b2Input);
+		valid = isValid(guess2Input[0], guess2Input[1], guess2Input[2]);
+		checkRGB(guess2Input[0], guess2Input[1], guess2Input[2]);
 	}
 
 	if (turnCounter == 3) {
-		r3Input = document.getElementById("r3").value;
-		g3Input = document.getElementById("g3").value;
-		b3Input = document.getElementById("b3").value;
+		guess3Input[0] = document.getElementById("r3").value;
+		guess3Input[1] = document.getElementById("g3").value;
+		guess3Input[2] = document.getElementById("b3").value;
 
-		valid = isValid(r3Input, b3Input, g3Input);
-		checkRGB(r3Input, g3Input, b3Input);
+		valid = isValid(guess3Input[0], guess3Input[1], guess3Input[2]);
+		checkRGB(guess3Input[0], guess3Input[1], guess3Input[2]);
 	}
 
 	if (turnCounter == 4) {
-		r4Input = document.getElementById("r4").value;
-		g4Input = document.getElementById("g4").value;
-		b4Input = document.getElementById("b4").value;
+		guess4Input[0] = document.getElementById("r4").value;
+		guess4Input[1] = document.getElementById("g4").value;
+		guess4Input[2] = document.getElementById("b4").value;
 
-		valid = isValid(r4Input, b4Input, g4Input);
-		checkRGB(r4Input, g4Input, b4Input);
+		valid = isValid(guess4Input[0], guess4Input[1], guess4Input[2]);
+		checkRGB(guess4Input[0], guess4Input[1], guess4Input[2]);
 	}
 
 	if (turnCounter == 5) {
-		r5Input = document.getElementById("r5").value;
-		g5Input = document.getElementById("g5").value;
-		b5Input = document.getElementById("b5").value;
+		guess5Input[0] = document.getElementById("r5").value;
+		guess5Input[1] = document.getElementById("g5").value;
+		guess5Input[2] = document.getElementById("b5").value;
 
-		valid = isValid(r5Input, b5Input, g5Input);
-		checkRGB(r5Input, g5Input, b5Input);
+		valid = isValid(guess5Input[0], guess5Input[1], guess5Input[2]);
+		checkRGB(guess5Input[0], guess5Input[1], guess5Input[2]);
 	}
 
 	if (turnCounter == 6) {
-		r6Input = document.getElementById("r6").value;
-		g6Input = document.getElementById("g6").value;
-		b6Input = document.getElementById("b6").value;
+		guess6Input[0] = document.getElementById("r6").value;
+		guess6Input[1] = document.getElementById("g6").value;
+		guess6Input[2] = document.getElementById("b6").value;
 
-		valid = isValid(r6Input, b6Input, g6Input);
-		checkRGB(r6Input, g6Input, b6Input);
+		valid = isValid(guess6Input[0], guess6Input[1], guess6Input[2]);
+		checkRGB(guess6Input[0], guess6Input[1], guess6Input[2]);
 	}
 }
 
 function run() {
 	selectRGB(); //selects answer color
 	answerColor = "rgb(" + answerValues[0] + ", " + answerValues[1] + ", " + answerValues[2] + ")"; //prints the rgb values 	
-	generateCircle(guessColor1, guessColor2, guessColor3, guessColor4, guessColor5, guessColor6); //initializes circle values to all black
+	generateCircle(guessColors); //initializes circle values to all black
 	document.getElementById("message").innerHTML += answerColor + " turn " + turnCounter + "<br>";
 }
 
@@ -135,7 +102,7 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 
 		if (thisR == "#00cc66" && thisG == "#00cc66" && thisB == "#00cc66")
 			win();
-		if (thisR != "#00cc66" && thisG != "#00cc66" && thisB != "#00cc66" && turnCounter == 6)
+		if ((thisR != "#00cc66" || thisG != "#00cc66" || thisB != "#00cc66") && turnCounter == 6)
 			lose();
 			
 		//document.getElementById("message").innerHTML += "YO WON OMG" + "<br>";
@@ -147,20 +114,9 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		let thisColor = "rgb(" + r + "," + g + "," + b + ")";
 		document.getElementById("message").innerHTML += "color: " + thisColor + "<br>";
 		
-		if(turnCounter == 1)
-			guessColor1 = thisColor;
-		if(turnCounter == 2)
-			guessColor2 = thisColor;
-		if(turnCounter == 3)
-			guessColor3 = thisColor;
-		if(turnCounter == 4)
-			guessColor4 = thisColor;
-		if(turnCounter == 5)
-			guessColor5 = thisColor;
-		if(turnCounter == 6)
-			guessColor6 = thisColor;
+		guessColors[turnCounter - 1] = thisColor;
 			
-		generateCircle(guessColor1, guessColor2, guessColor3, guessColor4, guessColor5, guessColor6);
+		generateCircle(guessColors);
 		
 		document.getElementById("r" + turnCounter).style.backgroundColor = thisR;  
 		document.getElementById("g" + turnCounter).style.backgroundColor = thisG;  
@@ -287,7 +243,7 @@ function selectRGB() {
 	answerValues[2] = Math.floor(Math.random() * 250) + 5;	
 }
 
-function generateCircle(s1, s2, s3, s4, s5, s6) {
+function generateCircle(guessColors) {
 	var c = document.getElementById("circleCanvas");
 	var ctx = c.getContext("2d");
 	ctx.lineWidth = 10;
@@ -308,7 +264,7 @@ function generateCircle(s1, s2, s3, s4, s5, s6) {
 	ctx.arc(375, 330, 325, 0, -1/3 * Math.PI, true);
 	ctx.stroke();
 	ctx.closePath();
-	ctx.fillStyle = s1;
+	ctx.fillStyle = guessColors[0];
 	ctx.fill();
 	
 	//sector 2
@@ -317,7 +273,7 @@ function generateCircle(s1, s2, s3, s4, s5, s6) {
 	ctx.arc(375, 330, 325, -1/3 * Math.PI, -2/3 * Math.PI, true);
 	ctx.stroke();
 	ctx.closePath();
-	ctx.fillStyle = s2;
+	ctx.fillStyle = guessColors[1];
 	ctx.fill();
 	
 	//sector 3
@@ -326,7 +282,7 @@ function generateCircle(s1, s2, s3, s4, s5, s6) {
 	ctx.arc(375, 330, 325, -2/3 * Math.PI, -3/3 * Math.PI, true);
 	ctx.stroke();
 	ctx.closePath();
-	ctx.fillStyle = s3;
+	ctx.fillStyle = guessColors[2];
 	ctx.fill();
 	
 	//sector 4
@@ -335,7 +291,7 @@ function generateCircle(s1, s2, s3, s4, s5, s6) {
 	ctx.arc(375, 330, 325, -3/3 * Math.PI, -4/3 * Math.PI, true);
 	ctx.stroke();
 	ctx.closePath();
-	ctx.fillStyle = s4;
+	ctx.fillStyle = guessColors[3];
 	ctx.fill();
 	
 	//sector 5 
@@ -344,7 +300,7 @@ function generateCircle(s1, s2, s3, s4, s5, s6) {
 	ctx.arc(375, 330, 325, -4/3 * Math.PI, -5/3 * Math.PI, true);
 	ctx.stroke();
 	ctx.closePath();
-	ctx.fillStyle = s5;
+	ctx.fillStyle = guessColors[4];
 	ctx.fill();
 	
 	//sector 6
@@ -353,7 +309,7 @@ function generateCircle(s1, s2, s3, s4, s5, s6) {
 	ctx.arc(375, 330, 325, -5/3 * Math.PI, -6/3 * Math.PI, true);
 	ctx.stroke();
 	ctx.closePath();
-	ctx.fillStyle = s6;
+	ctx.fillStyle = guessColors[5];
 	ctx.fill();
 	
 	//last line
