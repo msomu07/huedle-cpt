@@ -118,17 +118,16 @@ a:hover,  #instructions:hover {
 
 #input-div{
     position: absolute;
-	top: 250px;
+	top: 200px;
     left: 60%;
 }
 
 .input{
 	font-size: 30px;
     margin: 10px;
-    margin-top: 20px;
     background-color:  black;
     text-align: center;
-    padding-top: 15px;
+    padding: 10px;
 
     width: 120px;
     height: 50px;
@@ -138,8 +137,8 @@ a:hover,  #instructions:hover {
     border-radius: 30px;
     margin-top: 10px;
 
-    font-family: shalma;
-    font-size:  8.0em;
+    font-family: serif;
+    font-size:  2.8em;
     outline: none;
     text-decoration: none;
 
@@ -182,12 +181,15 @@ button:hover {
 }
 
 #color-guide {
-    height: 20px;
-    width: 350px;
+    height: 550px;
+    width: 60px;
     float: right;
-    margin-right: 60px;
-    margin-bottom: 200px;
-    background: linear-gradient(to right, 
+    text-align: center;
+
+    padding-top: 60px;
+    margin-right: -3%;
+    margin-top: 21px;
+    background: linear-gradient(to bottom, 
     #00cc66 0%, 
     #ff3300 14.29%,
     #ff6666 28.57%,
@@ -196,6 +198,13 @@ button:hover {
     #6666ff 71.43%,
     #3399ff 85.71%,
     #99ccff 100%);
+}
+
+.color-guide-label {
+    color: black;
+    font-family: shalma;
+    font-size: 8.0em;
+    margin-top: -50px;
 }
 
 #instructions-color-guide {
@@ -213,32 +222,6 @@ button:hover {
     #3399ff 85.71%,
     #99ccff 100%);
 }
-
-.labels {
-    float: right;
-    font-family: shalma;
-    font-size: 130px;
-    margin-right: -350px;
-    margin-top: 40px;
-}
-
-.labels #r {
-    float: left;
-    margin-top: -15px;
-    margin-right: 140px;
-}
-
-.labels #g {
-    margin-top: -23px;
-    float: left;
-}
-
-.labels #b {
-    margin-left: 140px;
-    margin-top: -8px;
-    float: right;
-}
-
 /* modal css */
 
 /* The Modal (background) */
