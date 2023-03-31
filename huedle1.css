@@ -296,20 +296,16 @@ button:hover {
     float: right;
 }
 
-#win-message {
-    text-align: center;
+#win-message, #lose-message {
     color: black;
-    font-family: motley-forces;
-    font-size:  10.0em;
-
-    animation-name: title-animation;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
+    font-family: shalma;
+    font-size: 8.5em;
+    text-align: center;
+    margin-top: -300px;
 }
 
-#lose-message {
+#win, #lose {
     text-align: center;
-    color: black;
     font-family: motley-forces;
     font-size:  10.0em;
 

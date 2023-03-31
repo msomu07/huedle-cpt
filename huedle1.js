@@ -131,7 +131,7 @@ function win() {
 	var modal = document.getElementById("winModal");
 	var span = document.getElementsByClassName("close")[0];
 
-	document.getElementById("win-message").innerHTML = "YOU WIN!!!";
+	document.getElementById("win-message").innerHTML = "<br> the answer was " + answerColor;
 
 	modal.style.display = "block";
 	span.onclick = function() {
@@ -149,7 +149,7 @@ function lose() {
 	var modal = document.getElementById("loseModal");
 	var span = document.getElementsByClassName("close")[0];
 
-	document.getElementById("lose-message").innerHTML = "YOU LOSE!!!";
+	document.getElementById("lose-message").innerHTML = "<br> the answer was " + answerColor;
 
 	modal.style.display = "block";
 	span.onclick = function() {
