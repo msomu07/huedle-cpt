@@ -54,7 +54,7 @@ body {
 .header h2 {
     font-family: motley-forces;
     float: left;
-    margin-top: 30px;
+    margin-top: 15px;
     padding-left: 40px;
     font-size: 5.0em;
 
@@ -66,8 +66,8 @@ body {
 .header a{
     float: right;
     padding-right: 50px;
-    margin-top: 30px;
-    font-size:  10.0em;
+    margin-top: 15px;
+    font-size:  9.0em;
 }
 
 .header #instructions {
@@ -78,9 +78,9 @@ body {
     padding: 0px;
 
     float: right;
-    padding-right: 300px;
-    margin-top: 30px;
-    font-size:  10.0em;
+    padding-right: 330px;
+    margin-top: 15px;
+    font-size:  9.0em;
 
     /* animation code from stack overflow */
     -o-transition: none;
@@ -110,6 +110,97 @@ a:hover,  #instructions:hover {
     animation-iteration-count: infinite;
 }
 
+/*s css*/
+#circleCanvas{
+	position: absolute;
+    top: 140px;
+    left: 3%;
+}
+
+#input-div{
+    position: absolute;
+	top: 130px;
+    left: 57%;
+}
+
+button {
+    background-color:  black;
+    color: white;
+    width: 400px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding-top: 30px;
+
+    font-family: shalma;
+    font-size:  8.0em;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+
+    /* animation code from stack overflow */
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+
+
+.input{
+	font-size: 30px;
+    margin: 10px;
+    background-color:  black;
+    text-align: center;
+    padding: 5px;
+
+    width: 100px;
+    height: 50px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 23px;
+    margin-top: 10px;
+
+    font-family: serif;
+    font-size:  2.3em;
+    outline: none;
+    text-decoration: none;
+
+}
+
+#color-guide {
+    height: 550px;
+    width: 60px;
+    float: right;
+    text-align: center;
+
+    padding-top: 60px;
+    margin-right: 5%;
+    margin-top: -6px;
+    background: linear-gradient(to bottom, 
+    #00cc66 0%, 
+    #ff3300 14.29%,
+    #ff6666 28.57%,
+    #ff66ff 42.86%,
+    #9966ff 57.14%,
+    #6666ff 71.43%,
+    #3399ff 85.71%,
+    #99ccff 100%);
+}
+
+.color-guide-label {
+    color: black;
+    font-family: shalma;
+    font-size: 8.0em;
+    margin-top: -50px;
+}
+
+/*m css
 #circleCanvas{
 	position: absolute;
     top: 220px;
@@ -120,6 +211,31 @@ a:hover,  #instructions:hover {
     position: absolute;
 	top: 200px;
     left: 60%;
+}
+
+button {
+    background-color:  black;
+    color: white;
+    width: 400px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    margin-top: 20px;
+    padding-top: 30px;
+
+    font-family: shalma;
+    font-size:  8.0em;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+
+    /* animation code from stack overflow */
+    /*-o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
 }
 
 .input{
@@ -143,43 +259,6 @@ a:hover,  #instructions:hover {
     text-decoration: none;
 
 }
-
-button {
-    background-color:  black;
-    color: white;
-    width: 400px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: white;
-    border-radius: 30px;
-    margin-top: 20px;
-    padding-top: 30px;
-
-    font-family: shalma;
-    font-size:  8.0em;
-    outline: none;
-    text-decoration: none;
-    text-align: center;
-
-    /* animation code from stack overflow */
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
-}
-
-button:hover {
-    animation-name: button-animation;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-}
-
-#message {
-	margin-top: 750px;
-	margin-left: 150px;
-}
-
 #color-guide {
     height: 550px;
     width: 60px;
@@ -205,6 +284,18 @@ button:hover {
     font-family: shalma;
     font-size: 8.0em;
     margin-top: -50px;
+}*/
+
+
+button:hover {
+    animation-name: button-animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+#message {
+	margin-top: 750px;
+	margin-left: 150px;
 }
 
 #instructions-color-guide {
@@ -263,7 +354,7 @@ button:hover {
     cursor: pointer;
   }
 
-  .modal-content a {
+.modal-content a {
     color: black;
     font-family: shalma;
     font-size:  10.0em;
