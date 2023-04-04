@@ -90,7 +90,71 @@
 			<div class="modal-content">
 				<span class="close">&times;</span>
 				<div id = "instructions-color-guide"></div>
-				<p id="instruction-message"></p>
+				<div class = "ticks" id="tick1">
+					&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;
+					
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|
+				</div>
+				<div class = "tick-labels">
+					correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					15 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					25 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					50 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					100 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					150 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					200 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					> 200 away
+				</div>
+				<!--<div class = "ticks" id="tick2">|</div>
+				<div class = "ticks" id="tick3">|</div>
+				<div class = "ticks" id="tick4">|</div>
+				<div class = "ticks" id="tick5">|</div>
+				<div class = "ticks" id="tick6">|</div>
+				<div class = "ticks" id="tick7">|</div>
+				<div class = "ticks" id="tick8">|</div>-->
+				<p id="instruction-message">
+					✧ The objective of this game is for you to
+					guess the RGB value of the randomly generated
+					color within six guesses<br><br>
+					✧ You will know how close your RGB values are to 
+					the actual answer by the coloring of the input 
+					values after they are entered <br><br>
+					✧ The diagram above demonstrates the colors that the
+					input boxes will turn depending on how far your guess 
+					is from the actual answer<br><br>
+						✧ The colors are similar to a hot-cold game in which
+						blues and purples are far away from the answer, but 
+						pinks and reds are closer<br><br>
+					✧ You can always refer to it on the game page by clicking 
+					the "instructions" button at the top or by looking at the
+					"color guide" on the right
+					<br><br>
+					✧ When an RGB input that you guessed is within 
+					5 of the actual value, that square will turn green 
+					<br><br>
+					✧ When all the input squares are green, you've won
+					the game!
+				</p>
+			</div>
+		</div>
+
+		<!-- Error Modal -->
+		<div id="errorModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p id = "error">ERROR</p>
+				<p id = "error-message">invalid input</p>
+				<p id="error-message-continued"></p>
 			</div>
 		</div>
 		<script>

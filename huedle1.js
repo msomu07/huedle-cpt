@@ -144,6 +144,24 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		document.getElementById("message").innerHTML += errorMessage;
 		turnCounter--;
 		document.getElementById("message").innerHTML += turnCounter;
+		error();
+	}
+}
+
+function error() {
+	var modal = document.getElementById("errorModal");
+	var span = document.getElementsByClassName("close")[0];
+
+	document.getElementById("error-message-continued").innerHTML = "check that each value is between 1<br>and 225 and that all values have been entered";
+
+	modal.style.display = "block";
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+	  
+	window.onclick = function(event) {
+		if (event.target == modal)
+		  modal.style.display = "none";
 	}
 }
 
@@ -151,8 +169,8 @@ function win() {
 	var modal = document.getElementById("winModal");
 	var span = document.getElementsByClassName("close")[0];
 
-	document.getElementById("win-message").innerHTML = "<br> the answer was " + answerColor;
-
+	document.getElementById("win-message").innerHTML = "<br> the exact answer was " + answerColor;
+	//modal.style.backgroundColor(answerColor);
 	modal.style.display = "block";
 	span.onclick = function() {
 		modal.style.display = "none";
@@ -169,7 +187,7 @@ function lose() {
 	var modal = document.getElementById("loseModal");
 	var span = document.getElementsByClassName("close")[0];
 
-	document.getElementById("lose-message").innerHTML = "<br> the answer was " + answerColor;
+	document.getElementById("lose-message").innerHTML = "<br> the exact answer was " + answerColor;
 
 	modal.style.display = "block";
 	span.onclick = function() {
@@ -187,8 +205,6 @@ function instructions() {
 	var modal = document.getElementById("instructionModal");
 	var span = document.getElementsByClassName("close")[0];
 
-	document.getElementById("instruction-message").innerHTML = "simple instructions";
-	
 	modal.style.display = "block";
 	span.onclick = function() {
 		modal.style.display = "none";
@@ -258,9 +274,9 @@ function checkB(bVal) { //checks b value
 /* generating circle and color to guess */
 
 function selectRGB() {
-	answerValues[0] = Math.floor(Math.random() * 250) + 10;
-	answerValues[1] = Math.floor(Math.random() * 250) + 10;
-	answerValues[2] = Math.floor(Math.random() * 250) + 10;	
+	answerValues[0] = Math.floor(Math.random() * 240) + 10;
+	answerValues[1] = Math.floor(Math.random() * 240) + 10;
+	answerValues[2] = Math.floor(Math.random() * 240) + 10;	
 }
 
 function generateCircle(guessColors) {
