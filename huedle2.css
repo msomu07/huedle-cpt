@@ -16,6 +16,13 @@ body {
 	background-color: black;
 }
 
+#message{
+	color: white;
+	font-size: 30px;
+	font-family: serif;
+	float: right;
+}
+
 @keyframes button-animation {
     0%   {border-color:#fc605b; color:#fc605b; left:0px; top:0px;}
     10%  {border-color:#fcb15b; color:#fcb15b; left:200px; top:0px;}
@@ -101,31 +108,36 @@ a:hover {
 
 #input-div{
     position: absolute;
-	top: 720px;
+	top: 150px;
     left: 60%;
 }
 
-.input{
+.brbr {
+	color: white;
 	font-size: 30px;
-    margin: 10px;
-    margin-top: 20px;
+	margin-top: -267px;
+}
+
+.input{
+	font-size: 20px;
+    margin: 5px;
+    margin-top: 5px;
     background-color:  black;
     text-align: center;
-    padding-top: 15px;
+    padding: 5px;
 
-    width: 120px;
-    height: 50px;
+    width: 100px;
+    height: 37px;
     border-width: 3px;
     border-style: solid;
     border-color: white;
     border-radius: 30px;
     margin-top: 10px;
 
-    font-family: shalma;
-    font-size:  8.0em;
+    font-family: serif;
+    font-size:  2.0em;
     outline: none;
     text-decoration: none;
-
 }
 
 button {
@@ -162,25 +174,4 @@ button:hover {
 #message {
 	margin-top: 750px;
 	margin-left: 150px;
-}
-
-#color-guide {
-    height: 20px;
-    width: 410px;
-    float: right;
-    margin-right: 38px;
-    /*background-color: -webkit-linear-gradient(90deg,
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 154, 0, 1) 10%,
-        rgba(208, 222, 33, 1) 20%,
-        rgba(79, 220, 74, 1) 30%,
-        rgba(63, 218, 216, 1) 40%,
-        rgba(47, 201, 226, 1) 50%,
-        rgba(28, 127, 238, 1) 60%,
-        rgba(95, 21, 242, 1) 70%,
-        rgba(186, 12, 248, 1) 80%,
-        rgba(251, 7, 217, 1) 90%,
-        rgba(255, 0, 0, 1) 100%);*/
-
-    background: -webkit-linear-gradient(left, transparent 0%,#fff 50%,transparent 100%);
 }
