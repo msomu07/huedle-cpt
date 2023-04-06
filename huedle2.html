@@ -12,48 +12,173 @@
             <h2>HUEDLE</h2>
             <a href="index.html">home</a>
         </div>
+        <!--<p id="yum"></p>
+        <input class="input" id="INPUTPUTPUT" placeholder="enter some stuff">-->
 		<div id="circle">
-			<canvas id="circleCanvas" width="1430" height="3000"></canvas> 
+			<canvas id="circleCanvas" width="1430" height="2150"></canvas> 
 		</div>
-		<div id = "color-guide"></div>
 		<div id="input-div">
 			<div id="guess1">
-				<input class="input" id="r1" type="number" min="0" max="255" size="3">
-                <input class="input" id="g1" type="number" min="0" max="255" size="3">
-                <input class="input" id="b1" type="number" min="0" max="255" size="3">
-
+				<input class="input" id="r1" type="number" min="0" max="255" size="3" placeholder="R">
+                <input class="input" id="g1" type="number" min="0" max="255" size="3" placeholder="G">
+                <input class="input" id="b1" type="number" min="0" max="255" size="3" placeholder="B">
             </div>
             <div id="guess2">
-				<input class="input" id="r2" type="number" min="0" max="255" size="3">
-				<input class="input" id="g2" type="number" min="0" max="255" size="3">
-				<input class="input" id="b2" type="number" min="0" max="255" size="3">
+				<input class="input" id="r2" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g2" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b2" type="number" min="0" max="255" size="3" placeholder="B" disabled>
 			</div>
             <div id="guess3">
-				<input class="input" id="r3" type="number" min="0" max="255" size="3">
-				<input class="input" id="g3" type="number" min="0" max="255" size="3">
-				<input class="input" id="b3" type="number" min="0" max="255" size="3">
+				<input class="input" id="r3" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g3" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b3" type="number" min="0" max="255" size="3" placeholder="B" disabled>
 			</div>
             <div id="guess4">
-				<input class="input" id="r4" type="number" min="0" max="255" size="3">
-				<input class="input" id="g4" type="number" min="0" max="255" size="3">
-				<input class="input" id="b4" type="number" min="0" max="255" size="3">
+				<input class="input" id="r4" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g4" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b4" type="number" min="0" max="255" size="3" placeholder="B" disabled>
 			</div>
             <div id="guess5">
-				<input class="input" id="r5" type="number" min="0" max="255" size="3">
-				<input class="input" id="g5" type="number" min="0" max="255" size="3">
-				<input class="input" id="b5" type="number" min="0" max="255" size="3">
+				<input class="input" id="r5" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g5" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b5" type="number" min="0" max="255" size="3" placeholder="B" disabled>
 			</div>
             <div id="guess6">
-				<input class="input" id="r6" type="number" min="0" max="255" size="3">
-				<input class="input" id="g6" type="number" min="0" max="255" size="3">
-				<input class="input" id="b6" type="number" min="0" max="255" size="3">
+				<input class="input" id="r6" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g6" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b6" type="number" min="0" max="255" size="3" placeholder="B" disabled>
 			</div>
-            <!-- add error for invalid number -->
+			<div id="guess7">
+				<input class="input" id="r7" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g7" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b7" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess8">
+				<input class="input" id="r8" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g8" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b8" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess9">
+				<input class="input" id="r9" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g9" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b9" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess10">
+				<input class="input" id="r10" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g10" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b10" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<!--<br><br>
+			<div id="guess1">
+				<input class="input" id="r1" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+                <input class="input" id="g1" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+                <input class="input" id="b1" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+            </div>
+            <div id="guess2">
+				<input class="input" id="r2" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g2" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b2" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+            <div id="guess3">
+				<input class="input" id="r3" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g3" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b3" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+            <div id="guess4">
+				<input class="input" id="r4" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g4" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b4" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+            <div id="guess5">
+				<input class="input" id="r5" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g5" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b5" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+            <div id="guess6">
+				<input class="input" id="r6" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g6" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b6" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess7">
+				<input class="input" id="r7" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g7" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b7" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess8">
+				<input class="input" id="r8" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g8" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b8" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess9">
+				<input class="input" id="r9" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g9" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b9" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess10">
+				<input class="input" id="r10">
+				<input class="input" id="g10" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b10" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<br><br><br>
+			<div id="guess1">
+				<input class="input" id="2r1" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+                <input class="input" id="2g1" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+                <input class="input" id="2b1" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+            </div>
+            <div id="guess2">
+				<input class="input" id="2r2" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="2g2" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="2b2" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+            <div id="guess3">
+				<input class="input" id="2r3" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="2g3" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="2b3" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+            <div id="guess4">
+				<input class="input" id="2r4" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="2g4" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="2b4" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+            <div id="guess5">
+				<input class="input" id="2r5" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="2g5" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="2b5" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+            <div id="guess6">
+				<input class="input" id="2r6" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="2g6" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="2b6" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess7">
+				<input class="input" id="r7" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g7" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b7" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess8">
+				<input class="input" id="r8" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g8" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b8" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess9">
+				<input class="input" id="r9" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g9" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b9" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>
+			<div id="guess10">
+				<input class="input" id="r10" type="number" min="0" max="255" size="3" placeholder="R" disabled>
+				<input class="input" id="g10" type="number" min="0" max="255" size="3" placeholder="G" disabled>
+				<input class="input" id="b10" type="number" min="0" max="255" size="3" placeholder="B" disabled>
+			</div>-->
 			<button type="submit" onclick="guess()">click to check</button>
 		</div>
-		<p id="message"></p>
 		<script>
 			run();
 		</script>
-    </body>
+		<br>
+		<p id="message"></p>
+		<!--<p class="brbr">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<p class="brbr">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+    --></body>
 </html>
