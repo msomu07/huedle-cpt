@@ -9,13 +9,26 @@
     </head>
     <body>
         <div class = "header">
-            <h2>HUEDLE</h2>
             <a href="index.html">home</a>
+			<button id="instructions" onclick="instructions()">instructions</button>
         </div>
         <!--<p id="yum"></p>
         <input class="input" id="INPUTPUTPUT" placeholder="enter some stuff">-->
 		<div id="circle">
 			<canvas id="circleCanvas" width="1430" height="2150"></canvas> 
+		</div>
+		<div id = "color-guide">
+			<div class = "color-guide-label">c</div>
+			<div class = "color-guide-label">o</div>
+			<div class = "color-guide-label">l</div>
+			<div class = "color-guide-label">o</div>
+			<div class = "color-guide-label">r</div>
+			<br>
+			<div class = "color-guide-label">g</div>
+			<div class = "color-guide-label">u</div>
+			<div class = "color-guide-label">i</div>
+			<div class = "color-guide-label">d</div>
+			<div class = "color-guide-label">e</div>
 		</div>
 		<div id="input-div">
 			<div class="guess1">
@@ -172,6 +185,90 @@
 			</div>
 			<button type="submit" onclick="guess()">click to check</button>
 		</div>
+		
+		<!-- Win Modal -->
+		<div id="winModal" class="modal">
+			<div class="modal-content">
+				<p id = "win">YOU WIN!</p>
+				<p id="win-message"></p>
+				<a href="menu.html" id="play-again">play again</a>
+				<a href="index.html" id="quit">quit</a>
+			</div>
+		</div>
+
+		<!-- Lose Modal -->
+		<div id="loseModal" class="modal">
+			<div class="modal-content">
+				<p id = "lose">YOU LOSE</p>
+				<p id="lose-message"></p>
+				<a href="menu.html" id="play-again">play again</a>
+				<a href="index.html" id="quit">quit</a>
+			</div>
+		</div>
+
+		<!-- Instructions Modal -->
+		<div id="instructionModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div id = "instructions-color-guide"></div>
+				<div class = "ticks" id="tick1">
+					&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;
+					
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					|
+				</div>
+				<div class = "tick-labels">
+					correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					15 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					25 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					50 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					100 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					150 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					200 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					> 200 away
+				</div>
+				<!--<div class = "ticks" id="tick2">|</div>
+				<div class = "ticks" id="tick3">|</div>
+				<div class = "ticks" id="tick4">|</div>
+				<div class = "ticks" id="tick5">|</div>
+				<div class = "ticks" id="tick6">|</div>
+				<div class = "ticks" id="tick7">|</div>
+				<div class = "ticks" id="tick8">|</div>-->
+				<p id="instruction-message">
+					✧ The objective of this game is for you to
+					guess the RGB value of the randomly generated
+					color within six guesses<br><br>
+					✧ You will know how close your RGB values are to 
+					the actual answer by the coloring of the input 
+					values after they are entered <br><br>
+					✧ The diagram above demonstrates the colors that the
+					input boxes will turn depending on how far your guess 
+					is from the actual answer<br><br>
+						✧ The colors are similar to a hot-cold game in which
+						blues and purples are far away from the answer, but 
+						pinks and reds are closer<br><br>
+					✧ You can always refer to it on the game page by clicking 
+					the "instructions" button at the top or by looking at the
+					"color guide" on the right
+					<br><br>
+					✧ When an RGB input that you guessed is within 
+					5 of the actual value, that square will turn green 
+					<br><br>
+					✧ When all the input squares are green, you've won
+					the game!
+				</p>
+			</div>
+		</div>
+
 		<script>
 			run();
 		</script>
