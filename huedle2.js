@@ -96,32 +96,32 @@ function guess() { // numberentered
 		guess7Input[1] = document.getElementById("g7").value;
 		guess7Input[2] = document.getElementById("b7").value;
 
-		valid = isValid(guess6Input[0], guess6Input[1], guess6Input[2]);
-		checkRGB(guess6Input[0], guess6Input[1], guess6Input[2]);
+		valid = isValid(guess7Input[0], guess7Input[1], guess7Input[2]);
+		checkRGB(guess7Input[0], guess7Input[1], guess7Input[2]);
 	}
 	if (turnCounter == 8) {
 		guess8Input[0] = document.getElementById("r8").value;
 		guess8Input[1] = document.getElementById("g8").value;
 		guess8Input[2] = document.getElementById("b8").value;
 
-		valid = isValid(guess6Input[0], guess6Input[1], guess6Input[2]);
-		checkRGB(guess6Input[0], guess6Input[1], guess6Input[2]);
+		valid = isValid(guess8Input[0], guess8Input[1], guess8Input[2]);
+		checkRGB(guess8Input[0], guess8Input[1], guess8Input[2]);
 	}
 	if (turnCounter == 9) {
 		guess9Input[0] = document.getElementById("r9").value;
 		guess9Input[1] = document.getElementById("g9").value;
 		guess9Input[2] = document.getElementById("b9").value;
 
-		valid = isValid(guess6Input[0], guess6Input[1], guess6Input[2]);
-		checkRGB(guess6Input[0], guess6Input[1], guess6Input[2]);
+		valid = isValid(guess9Input[0], guess9Input[1], guess9Input[2]);
+		checkRGB(guess9Input[0], guess9Input[1], guess9Input[2]);
 	}
 	if (turnCounter == 10) {
 		guess10Input[0] = document.getElementById("r10").value;
 		guess10Input[1] = document.getElementById("g10").value;
 		guess10Input[2] = document.getElementById("b10").value;
 
-		valid = isValid(guess6Input[0], guess6Input[1], guess6Input[2]);
-		checkRGB(guess6Input[0], guess6Input[1], guess6Input[2]);
+		valid = isValid(guess10Input[0], guess10Input[1], guess10Input[2]);
+		checkRGB(guess10Input[0], guess10Input[1], guess10Input[2]);
 	}
 }
 
@@ -164,16 +164,19 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		if(turnCounter < 10) //checks if turnCounter is less than six to implement the enableInput
 			enableInput(); //enableInput doesn't need to be called on the last guess
 	
-		let thisGuess = [checkR(r), checkG(g), checkB(b)];
+		let hintSet1 = check1Vals(r, g, b);
+		let hintSet2 = check2Vals(r, g, b);
+		let hintSet3 = check3Vals(r, g, b);
 
-		if (thisGuess[0] == "#00cc66" && thisGuess[1] == "#00cc66" && thisGuess[2] == "#00cc66")
+		/*if (thisGuess[0] == "#00cc66" && thisGuess[1] == "#00cc66" && thisGuess[2] == "#00cc66")
 			win();
 		if ((thisGuess[0] != "#00cc66" || thisGuess[1] != "#00cc66" || thisGuess[2] != "#00cc66") && turnCounter == 10)
-			lose();
+			lose();*/
 			
-		document.getElementById("message").innerHTML += "r: " + thisGuess[0] + "<br>"; //checks r guess
-		document.getElementById("message").innerHTML += "g: " + thisGuess[1] + "<br>"; //checks g guess
-		document.getElementById("message").innerHTML += "b: " + thisGuess[2] + "<br>"; //checks b guess
+		document.getElementById("message").innerHTML += "r: " + hintSet1[0] + "<br>"; //checks r guess
+		document.getElementById("message").innerHTML += "g: " + hintSet1[1] + "<br>"; //checks g guess
+		document.getElementById("message").innerHTML += "b: " + hintSet1[2] + "<br>"; //checks b guess
+		
 		
 		let thisColor = "rgb(" + r + "," + g + "," + b + ")";
 		document.getElementById("message").innerHTML += "color: " + thisColor + "<br>";
@@ -182,10 +185,26 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 			
 		generateCircle();
 		
-		document.getElementById("r" + turnCounter).style.backgroundColor = thisGuess[0];  
-		document.getElementById("g" + turnCounter).style.backgroundColor = thisGuess[1];  
-		document.getElementById("b" + turnCounter).style.backgroundColor = thisGuess[2];  
-
+		document.getElementById("r" + turnCounter).style.backgroundColor = hintSet1[0];  
+		document.getElementById("g" + turnCounter).style.backgroundColor = hintSet1[1];  
+		document.getElementById("b" + turnCounter).style.backgroundColor = hintSet1[2];  
+		
+		document.getElementById("r" + turnCounter + "a").style.backgroundColor = hintSet2[0];  
+		document.getElementById("g" + turnCounter + "a").style.backgroundColor = hintSet2[1];  
+		document.getElementById("b" + turnCounter + "a").style.backgroundColor = hintSet2[2];  
+		
+		document.getElementById("r" + turnCounter + "b").style.backgroundColor = hintSet3[0];  
+		document.getElementById("g" + turnCounter + "b").style.backgroundColor = hintSet3[1];  
+		document.getElementById("b" + turnCounter + "b").style.backgroundColor = hintSet3[2]; 
+	
+		document.getElementById("r" + turnCounter + "a").value = r;  
+		document.getElementById("g" + turnCounter + "a").value = g;  
+		document.getElementById("b" + turnCounter + "a").value = b;  
+		
+		document.getElementById("r" + turnCounter + "b").value = r;  
+		document.getElementById("g" + turnCounter + "b").value = g;  
+		document.getElementById("b" + turnCounter + "b").value = b; 
+	
 	}
 	else {
 		document.getElementById("message").innerHTML += errorMessage;
@@ -193,6 +212,213 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		document.getElementById("message").innerHTML += turnCounter;
 		error();
 	}
+}
+
+function check1Vals(rVal, gVal, bVal) {
+	let thisGuess = [checkR(rVal), checkG(gVal), checkB(bVal)];
+	return thisGuess;
+}
+
+function check2Vals(rVal, gVal, bVal) {
+	let thisGuess = [checkRa(rVal), checkGa(gVal), checkBa(bVal)];
+	return thisGuess;
+}
+
+function check3Vals(rVal, gVal, bVal) {
+	let thisGuess = [checkRb(rVal), checkGb(gVal), checkBb(bVal)];
+	return thisGuess;
+}
+
+function checkR(rVal) { //checks r value
+	if (Math.abs(rVal - answer1Values[0]) <= 5) //if guess is correct --> green
+		return "#00cc66";
+	if (Math.abs(rVal - answer1Values[0]) <= 15) //if guess is rlly close --> red
+		return "#ff3300";
+	if (Math.abs(rVal - answer1Values[0]) <= 25) //if guess is pretty close --> organey pink
+		return "#ff6666";
+	if (Math.abs(rVal - answer1Values[0]) <= 50) //if guess is close --> pink
+		return "#ff66ff";
+	if (Math.abs(rVal - answer1Values[0]) <= 100) //if guess is far --> purple
+		return "#9966ff";
+	if (Math.abs(rVal - answer1Values[0]) <= 150) //if guess is pretty far --> blueish purple
+		return "#6666ff";
+	if (Math.abs(rVal - answer1Values[0]) <= 200) //if guess is really far -->  blue
+		return "#3399ff";
+	return "#99ccff"; //if guess is way off --> light blue
+}
+
+function checkG(gVal) { //checks g value
+	if (Math.abs(gVal - answer1Values[1]) <= 5)
+		return "#00cc66";
+	if (Math.abs(gVal - answer1Values[1]) <= 15)
+		return "#ff3300";
+	if (Math.abs(gVal - answer1Values[1]) <= 25)
+		return "#ff6666";
+	if (Math.abs(gVal - answer1Values[1]) <= 50)
+		return "#ff66ff";
+	if (Math.abs(gVal - answer1Values[1]) <= 100)
+		return "#9966ff";
+	if (Math.abs(gVal - answer1Values[1]) <= 150)
+		return "#6666ff";
+	if (Math.abs(gVal - answer1Values[1]) <= 200)
+		return "#3399ff";
+	return "#99ccff";
+}
+
+function checkB(bVal) { //checks b value
+	if (Math.abs(bVal - answer1Values[2]) <= 5)
+		return "#00cc66";
+	if (Math.abs(bVal - answer1Values[2]) <= 15)
+		return "#ff3300";
+	if (Math.abs(bVal - answer1Values[2]) <= 25)
+		return "#ff6666";
+	if (Math.abs(bVal - answer1Values[2]) <= 50)
+		return "#ff66ff";
+	if (Math.abs(bVal - answer1Values[2]) <= 100)
+		return "#9966ff";
+	if (Math.abs(bVal - answer1Values[2]) <= 150)
+		return "#6666ff";
+	if (Math.abs(bVal - answer1Values[2]) <= 200)
+		return "#3399ff";
+	return "#99ccff";
+}
+
+function checkRa(rVal) { //checks r value
+	if (Math.abs(rVal - answer2Values[0]) <= 5) //if guess is correct --> green
+		return "#00cc66";
+	if (Math.abs(rVal - answer2Values[0]) <= 15) //if guess is rlly close --> red
+		return "#ff3300";
+	if (Math.abs(rVal - answer2Values[0]) <= 25) //if guess is pretty close --> organey pink
+		return "#ff6666";
+	if (Math.abs(rVal - answer2Values[0]) <= 50) //if guess is close --> pink
+		return "#ff66ff";
+	if (Math.abs(rVal - answer2Values[0]) <= 100) //if guess is far --> purple
+		return "#9966ff";
+	if (Math.abs(rVal - answer2Values[0]) <= 150) //if guess is pretty far --> blueish purple
+		return "#6666ff";
+	if (Math.abs(rVal - answer2Values[0]) <= 200) //if guess is really far -->  blue
+		return "#3399ff";
+	return "#99ccff"; //if guess is way off --> light blue
+}
+
+function checkGa(gVal) { //checks g value
+	if (Math.abs(gVal - answer2Values[1]) <= 5)
+		return "#00cc66";
+	if (Math.abs(gVal - answer2Values[1]) <= 15)
+		return "#ff3300";
+	if (Math.abs(gVal - answer2Values[1]) <= 25)
+		return "#ff6666";
+	if (Math.abs(gVal - answer2Values[1]) <= 50)
+		return "#ff66ff";
+	if (Math.abs(gVal - answer2Values[1]) <= 100)
+		return "#9966ff";
+	if (Math.abs(gVal - answer2Values[1]) <= 150)
+		return "#6666ff";
+	if (Math.abs(gVal - answer2Values[1]) <= 200)
+		return "#3399ff";
+	return "#99ccff";
+}
+
+function checkBa(bVal) { //checks b value
+	if (Math.abs(bVal - answer2Values[2]) <= 5)
+		return "#00cc66";
+	if (Math.abs(bVal - answer2Values[2]) <= 15)
+		return "#ff3300";
+	if (Math.abs(bVal - answer2Values[2]) <= 25)
+		return "#ff6666";
+	if (Math.abs(bVal - answer2Values[2]) <= 50)
+		return "#ff66ff";
+	if (Math.abs(bVal - answer2Values[2]) <= 100)
+		return "#9966ff";
+	if (Math.abs(bVal - answer2Values[2]) <= 150)
+		return "#6666ff";
+	if (Math.abs(bVal - answer2Values[2]) <= 200)
+		return "#3399ff";
+	return "#99ccff";
+}
+
+function checkRb(rVal) { //checks r value
+	if (Math.abs(rVal - answer3Values[0]) <= 5) //if guess is correct --> green
+		return "#00cc66";
+	if (Math.abs(rVal - answer3Values[0]) <= 15) //if guess is rlly close --> red
+		return "#ff3300";
+	if (Math.abs(rVal - answer3Values[0]) <= 25) //if guess is pretty close --> organey pink
+		return "#ff6666";
+	if (Math.abs(rVal - answer3Values[0]) <= 50) //if guess is close --> pink
+		return "#ff66ff";
+	if (Math.abs(rVal - answer3Values[0]) <= 100) //if guess is far --> purple
+		return "#9966ff";
+	if (Math.abs(rVal - answer3Values[0]) <= 150) //if guess is pretty far --> blueish purple
+		return "#6666ff";
+	if (Math.abs(rVal - answer3Values[0]) <= 200) //if guess is really far -->  blue
+		return "#3399ff";
+	return "#99ccff"; //if guess is way off --> light blue
+}
+
+function checkGb(gVal) { //checks g value
+	if (Math.abs(gVal - answer3Values[1]) <= 5)
+		return "#00cc66";
+	if (Math.abs(gVal - answer3Values[1]) <= 15)
+		return "#ff3300";
+	if (Math.abs(gVal - answer3Values[1]) <= 25)
+		return "#ff6666";
+	if (Math.abs(gVal - answer3Values[1]) <= 50)
+		return "#ff66ff";
+	if (Math.abs(gVal - answer3Values[1]) <= 100)
+		return "#9966ff";
+	if (Math.abs(gVal - answer3Values[1]) <= 150)
+		return "#6666ff";
+	if (Math.abs(gVal - answer3Values[1]) <= 200)
+		return "#3399ff";
+	return "#99ccff";
+}
+
+function checkBb(bVal) { //checks b value
+	if (Math.abs(bVal - answer3Values[2]) <= 5)
+		return "#00cc66";
+	if (Math.abs(bVal - answer3Values[2]) <= 15)
+		return "#ff3300";
+	if (Math.abs(bVal - answer3Values[2]) <= 25)
+		return "#ff6666";
+	if (Math.abs(bVal - answer3Values[2]) <= 50)
+		return "#ff66ff";
+	if (Math.abs(bVal - answer3Values[2]) <= 100)
+		return "#9966ff";
+	if (Math.abs(bVal - answer3Values[2]) <= 150)
+		return "#6666ff";
+	if (Math.abs(bVal - answer3Values[2]) <= 200)
+		return "#3399ff";
+	return "#99ccff";
+}
+
+function selectRGB() {
+	answer1Values[0] = Math.floor(Math.random() * 240) + 10; //assigns random rgb values to the first answer color
+	answer1Values[1] = Math.floor(Math.random() * 240) + 10;
+	answer1Values[2] = Math.floor(Math.random() * 240) + 10;
+	
+	do
+		answer2Values[0] = Math.floor(Math.random() * 240) + 10;
+	while(Math.abs(answer2Values[0] - answer1Values[0]) < 50) //makes sure the rgb values of the second color are not too similar to the rgb values of the first color
+	
+	do
+		answer2Values[1] = Math.floor(Math.random() * 240) + 10;
+	while(Math.abs(answer2Values[1] - answer1Values[1]) < 50)
+		
+	do
+		answer2Values[2] = Math.floor(Math.random() * 240) + 10;
+	while(Math.abs(answer2Values[2] - answer1Values[2]) < 50)	
+	
+	do
+		answer3Values[0] = Math.floor(Math.random() * 240) + 10; //makes sure the rgb values of the third color are not too similar to the rgb values of the first and second colors
+	while(Math.abs(answer2Values[0] - answer3Values[0]) < 50 || Math.abs(answer3Values[0] - answer1Values[0]) < 50)
+	
+	do
+		answer3Values[1] = Math.floor(Math.random() * 240) + 10;
+	while(Math.abs(answer2Values[1] - answer3Values[1]) < 50 || Math.abs(answer3Values[1] - answer1Values[1]) < 50)
+	
+	do
+		answer3Values[2] = Math.floor(Math.random() * 240) + 10;	
+	while(Math.abs(answer2Values[2] - answer3Values[2]) < 50 || Math.abs(answer3Values[2] - answer1Values[2]) < 50)	
 }
 
 function error() {
@@ -262,90 +488,6 @@ function instructions() {
 			modal.style.display = "none";
 		}
 	}
-}
-
-function checkR(rVal) { //checks r value
-	if (Math.abs(rVal - answerValues[0]) <= 5) //if guess is correct --> green
-		return "#00cc66";
-	if (Math.abs(rVal - answerValues[0]) <= 15) //if guess is rlly close --> red
-		return "#ff3300";
-	if (Math.abs(rVal - answerValues[0]) <= 25) //if guess is pretty close --> organey pink
-		return "#ff6666";
-	if (Math.abs(rVal - answerValues[0]) <= 50) //if guess is close --> pink
-		return "#ff66ff";
-	if (Math.abs(rVal - answerValues[0]) <= 100) //if guess is far --> purple
-		return "#9966ff";
-	if (Math.abs(rVal - answerValues[0]) <= 150) //if guess is pretty far --> blueish purple
-		return "#6666ff";
-	if (Math.abs(rVal - answerValues[0]) <= 200) //if guess is really far -->  blue
-		return "#3399ff";
-	return "#99ccff"; //if guess is way off --> light blue
-}
-
-function checkG(gVal) { //checks g value
-	if (Math.abs(gVal - answerValues[1]) <= 5)
-		return "#00cc66";
-	if (Math.abs(gVal - answerValues[1]) <= 15)
-		return "#ff3300";
-	if (Math.abs(gVal - answerValues[1]) <= 25)
-		return "#ff6666";
-	if (Math.abs(gVal - answerValues[1]) <= 50)
-		return "#ff66ff";
-	if (Math.abs(gVal - answerValues[1]) <= 100)
-		return "#9966ff";
-	if (Math.abs(gVal - answerValues[1]) <= 150)
-		return "#6666ff";
-	if (Math.abs(gVal - answerValues[1]) <= 200)
-		return "#3399ff";
-	return "#99ccff";
-}
-
-function checkB(bVal) { //checks b value
-	if (Math.abs(bVal - answerValues[2]) <= 5)
-		return "#00cc66";
-	if (Math.abs(bVal - answerValues[2]) <= 15)
-		return "#ff3300";
-	if (Math.abs(bVal - answerValues[2]) <= 25)
-		return "#ff6666";
-	if (Math.abs(bVal - answerValues[2]) <= 50)
-		return "#ff66ff";
-	if (Math.abs(bVal - answerValues[2]) <= 100)
-		return "#9966ff";
-	if (Math.abs(bVal - answerValues[2]) <= 150)
-		return "#6666ff";
-	if (Math.abs(bVal - answerValues[2]) <= 200)
-		return "#3399ff";
-	return "#99ccff";
-}
-
-function selectRGB() {
-	answer1Values[0] = Math.floor(Math.random() * 240) + 10; //assigns random rgb values to the first answer color
-	answer1Values[1] = Math.floor(Math.random() * 240) + 10;
-	answer1Values[2] = Math.floor(Math.random() * 240) + 10;
-	
-	do
-		answer2Values[0] = Math.floor(Math.random() * 240) + 10;
-	while(Math.abs(answer2Values[0] - answer1Values[0]) < 50) //makes sure the rgb values of the second color are not too similar to the rgb values of the first color
-	
-	do
-		answer2Values[1] = Math.floor(Math.random() * 240) + 10;
-	while(Math.abs(answer2Values[1] - answer1Values[1]) < 50)
-		
-	do
-		answer2Values[2] = Math.floor(Math.random() * 240) + 10;
-	while(Math.abs(answer2Values[2] - answer1Values[2]) < 50)	
-	
-	do
-		answer3Values[0] = Math.floor(Math.random() * 240) + 10; //makes sure the rgb values of the third color are not too similar to the rgb values of the first and second colors
-	while(Math.abs(answer2Values[0] - answer3Values[0]) < 50 || Math.abs(answer3Values[0] - answer1Values[0]) < 50)
-	
-	do
-		answer3Values[1] = Math.floor(Math.random() * 240) + 10;
-	while(Math.abs(answer2Values[1] - answer3Values[1]) < 50 || Math.abs(answer3Values[1] - answer1Values[1]) < 50)
-	
-	do
-		answer3Values[2] = Math.floor(Math.random() * 240) + 10;	
-	while(Math.abs(answer2Values[2] - answer3Values[2]) < 50 || Math.abs(answer3Values[2] - answer1Values[2]) < 50)	
 }
 
 function generateCircle() {

@@ -17,10 +17,10 @@ body {
 }
 
 #message{
+	position: absolute;
 	color: white;
 	font-size: 30px;
 	font-family: serif;
-	float: right;
 }
 
 @keyframes button-animation {
@@ -113,9 +113,11 @@ a:hover {
 }
 
 .brbr {
+	position:absolute;
 	color: white;
 	font-size: 30px;
-	margin-top: -267px;
+	margin-top: 650px;
+	width:100%;
 }
 
 .input{
