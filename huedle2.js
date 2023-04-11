@@ -144,6 +144,12 @@ function enableInput() { //allows the user to enter guess values for the next tu
 	document.getElementById("b" + (turnCounter + 1)).disabled = false;
 }
 
+function enableNewInput(char) {
+	document.getElementById("r" + (turnCounter + 1) + char).disabled = false;
+	document.getElementById("g" + (turnCounter + 1) + char).disabled = false;
+	document.getElementById("b" + (turnCounter + 1) + char).disabled = false;
+}
+
 function disableInput(num) { //prevents the user from entering the guess values for previous turns or skipping ahead
 	document.getElementById("r" + num).disabled = true;
 	document.getElementById("g" + num).disabled = true;
@@ -162,11 +168,24 @@ function isValid(r, g, b) {
 
 function checkRGB(r, g, b) { //checks how accurate rgb is
 	let errorMessage = "!isvalid error <br>";
+
 	if (valid) {
 		disableInput(turnCounter);
 		if(turnCounter < 10) //checks if turnCounter is less than six to implement the enableInput
 			enableInput(); //enableInput doesn't need to be called on the last guess
 	
+		/*if (isColor1Correct) {
+			disableInput(1);
+			disableInput(2);
+			disableInput(3);
+			disableInput(4);
+			disableInput(5);
+			disableInput(6);
+	
+			if (!isColorCorrect)
+				enableNewInput(a);
+		}*/
+		
 		let hintSet1 = check1Vals(r, g, b);
 		let hintSet2 = check2Vals(r, g, b);
 		let hintSet3 = check3Vals(r, g, b);
