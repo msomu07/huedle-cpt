@@ -117,7 +117,73 @@ a:hover {
     animation-iteration-count: infinite;
 }
 
+/* m css */
 #circleCanvas{
+	position: absolute;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 50px;
+    margin-right: auto;
+    display: block;
+}
+
+#input-div{
+    position: absolute;
+	top: 150px;
+    left: 50%;
+}
+
+.brbr {
+	position:absolute;
+	color: white;
+	font-size: 30px;
+	margin-top: 650px;
+	width:100%;
+}
+
+.input{
+	font-size: 20px;
+    margin: 5px;
+    margin-top: 5px;
+    background-color:  black;
+    text-align: center;
+    padding: 5px;
+
+    width: 150px;
+    height: 37px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    margin-top: 10px;
+
+    font-family: serif;
+    font-size:  2.0em;
+    outline: none;
+    text-decoration: none;
+}
+
+#color-guide {
+    height: 2010px;
+    width: 80px;
+    position: absolute;
+    text-align: center;
+    padding-top: 60px;
+    margin-left: 1550px;
+    margin-top: 10px;
+    background: linear-gradient(to bottom, 
+    #00cc66 0%, 
+    #ff3300 14.29%,
+    #ff6666 28.57%,
+    #ff66ff 42.86%,
+    #9966ff 57.14%,
+    #6666ff 71.43%,
+    #3399ff 85.71%,
+    #99ccff 100%);
+}
+
+/* s css */
+/*#circleCanvas{
 	position: absolute;
     padding-left: 0;
     padding-right: 0;
@@ -179,13 +245,7 @@ a:hover {
     #6666ff 71.43%,
     #3399ff 85.71%,
     #99ccff 100%);
-}
-.color-guide-label {
-    color: black;
-    font-family: shalma;
-    font-size: 8.0em;
-    margin-top: -50px;
-}
+} */
 
 button {
     background-color:  black;
@@ -270,8 +330,8 @@ button:hover {
   .modal-content {
     background-color: #fefefe;
     color: black;
-    height: 600px;
-    margin: 15% auto; /* 15% from the top and centered */
+    height: 690px;
+    margin: 12% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
@@ -318,12 +378,12 @@ button:hover {
 }
 
 #play-again {
-    margin-top: 50px;
+    margin-top: 0px;
     float: left;
 }
 
 #quit {
-    margin-top: 50px;
+    margin-top: 0px;
     float: right;
 }
 

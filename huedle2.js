@@ -23,6 +23,9 @@ let guess9Input = [];
 let guess10Input = [];
 
 var valid; //boolean checks if the input is valid
+let isColor1Correct = false;
+let isColor2Correct = false;
+let isColor3Correct = false;
 
 /*let innyput = document.querySelector("INPUTPUTPUT");
 let display = document.getElementById("yum");
@@ -36,7 +39,7 @@ function updateValue(e) {
 function guess() { // numberentered
 	++turnCounter; //checks turn number
 	
-	document.getElementById("message").innerHTML += "turn " + turnCounter + "<br>";
+	document.getElementById("message").innerHTML += "turn " + turnCounter + " " + answer1Values + " " + answer2Values + " " + answer3Values;
 	
 	if (turnCounter == 1) {
 		guess1Input[0] = document.getElementById("r1").value; //assigns raw input to the variables
@@ -168,7 +171,24 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		let hintSet2 = check2Vals(r, g, b);
 		let hintSet3 = check3Vals(r, g, b);
 
-		/*if (thisGuess[0] == "#00cc66" && thisGuess[1] == "#00cc66" && thisGuess[2] == "#00cc66")
+		let isWon = false;
+		
+		if(hintSet1[0] == "#00cc66" && hintSet1[1] == "#00cc66" && hintSet1[2] == "#00cc66")
+			isColor1Correct = true;
+		if(hintSet2[0] == "#00cc66" && hintSet2[1] == "#00cc66" && hintSet2[2] == "#00cc66")
+			isColor2Correct = true;
+		if(hintSet3[0] == "#00cc66" && hintSet3[1] == "#00cc66" && hintSet3[2] == "#00cc66")
+			isColor3Correct = true;
+		
+		if(isColor1Correct && isColor2Correct && isColor3Correct)
+			isWon = true;
+
+		if (isWon)
+			win();
+		else if (turnCounter >= 10)
+			lose();
+		
+		/*if (hintSet1[0] == "#00cc66" && hintSet1[1] == "#00cc66" && hintSet1[2] == "#00cc66")
 			win();
 		if ((thisGuess[0] != "#00cc66" || thisGuess[1] != "#00cc66" || thisGuess[2] != "#00cc66") && turnCounter == 10)
 			lose();*/
@@ -442,7 +462,7 @@ function win() {
 	var modal = document.getElementById("winModal");
 	var span = document.getElementsByClassName("close")[0];
 
-	document.getElementById("win-message").innerHTML = "<br> the exact answer was " + answerColor;
+	document.getElementById("win-message").innerHTML = "<br> the exact answers are <br>" + answerColors[0] +  "<br>" + answerColors[1] +  "<br>" + answerColors[2];
 	//modal.style.backgroundColor(answerColor);
 	modal.style.display = "block";
 	span.onclick = function() {
@@ -460,8 +480,7 @@ function lose() {
 	var modal = document.getElementById("loseModal");
 	var span = document.getElementsByClassName("close")[0];
 
-	document.getElementById("lose-message").innerHTML = "<br> the exact answer was " + answerColor;
-
+	document.getElementById("lose-message").innerHTML = "<br> the exact answers are <br>" + answerColors[0] +  "<br>" + answerColors[1] +  "<br>" + answerColors[2];
 	modal.style.display = "block";
 	span.onclick = function() {
 		modal.style.display = "none";
