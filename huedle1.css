@@ -426,9 +426,10 @@ button:hover {
     font-family: serif;
     font-size: 4.2em;
     margin-top: -54px;
+    margin-left: 40px;
 }
 
 .tick-labels {
     color: black;
-    margin-left: 250px;
+    margin-left: 300px;
 }

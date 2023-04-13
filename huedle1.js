@@ -2,7 +2,6 @@ let answerValues = []; //an array containing the r, g, and b values of the answe
 let answerColor = ""; //answer color
 
 let turnCounter = 0; //counts the number of turns for the labels
-let message = "";
 
 //raw input variables
 //input from each guess
@@ -22,7 +21,7 @@ let guessColors = ["black", "black", "black", "black", "black", "black"];
 function guess() { // numberentered
 	++turnCounter; //checks turn number
 	
-	document.getElementById("message").innerHTML += "turn " + turnCounter + "<br>";
+	//document.getElementById("message").innerHTML += "turn " + turnCounter + "<br>";
 	
 	if (turnCounter == 1) {
 		guess1Input[0] = document.getElementById("r1").value; //assigns raw input to the variables
@@ -84,7 +83,7 @@ function run() {
 	selectRGB(); //selects answer color
 	answerColor = "rgb(" + answerValues[0] + ", " + answerValues[1] + ", " + answerValues[2] + ")"; //prints the rgb values 	
 	generateCircle(guessColors); //initializes circle values to all black
-	document.getElementById("message").innerHTML += answerColor + " turn " + turnCounter + "<br>";
+	//document.getElementById("message").innerHTML += answerColor + " turn " + turnCounter + "<br>";
 }
 
 function enableInput() { //allows the user to enter guess values for the next turn in the input boxes
@@ -124,12 +123,12 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		if ((thisGuess[0] != "#00cc66" || thisGuess[1] != "#00cc66" || thisGuess[2] != "#00cc66") && turnCounter == 6)
 			lose();
 			
-		document.getElementById("message").innerHTML += "r: " + thisGuess[0] + "<br>"; //checks r guess
+		/*document.getElementById("message").innerHTML += "r: " + thisGuess[0] + "<br>"; //checks r guess
 		document.getElementById("message").innerHTML += "g: " + thisGuess[1] + "<br>"; //checks g guess
-		document.getElementById("message").innerHTML += "b: " + thisGuess[2] + "<br>"; //checks b guess
+		document.getElementById("message").innerHTML += "b: " + thisGuess[2] + "<br>"; //checks b guess*/
 		
 		let thisColor = "rgb(" + r + "," + g + "," + b + ")";
-		document.getElementById("message").innerHTML += "color: " + thisColor + "<br>";
+		//document.getElementById("message").innerHTML += "color: " + thisColor + "<br>";
 		
 		guessColors[turnCounter - 1] = thisColor;
 			
@@ -141,9 +140,9 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 
 	}
 	else {
-		document.getElementById("message").innerHTML += errorMessage;
+		//document.getElementById("message").innerHTML += errorMessage;
 		turnCounter--;
-		document.getElementById("message").innerHTML += turnCounter;
+		//document.getElementById("message").innerHTML += turnCounter;
 		error();
 	}
 }
