@@ -117,7 +117,7 @@ a:hover {
     animation-iteration-count: infinite;
 }
 
-/* m css */
+/* m css */ /*
 #circleCanvas{
 	position: absolute;
     padding-left: 0;
@@ -165,7 +165,6 @@ a:hover {
 
 #color-guide {
     height: 2010px;
-    z-index: 3;
     width: 80px;
     position: absolute;
     text-align: center;
@@ -182,9 +181,21 @@ a:hover {
     #3399ff 85.71%,
     #99ccff 100%);
 }
+.ticks {
+    color: black;
+    font-family: serif;
+    font-size: 4.2em;
+    margin-top: -54px;
+    margin-left: 40px;
+}
+
+.tick-labels {
+    color: black;
+    margin-left: 300px;
+}*/
 
 /* s css */
-/*#circleCanvas{
+#circleCanvas{
 	position: absolute;
     padding-left: 0;
     padding-right: 0;
@@ -196,7 +207,7 @@ a:hover {
 #input-div{
     position: absolute;
 	top: 150px;
-    left: 60%;
+    left: 57%;
 }
 
 .brbr {
@@ -230,13 +241,12 @@ a:hover {
 }
 
 #color-guide {
-    height: 2010px;
+    height: 2100px;
     width: 60px;
     position: absolute;
     text-align: center;
     padding-top: 60px;
-    margin-left: 1600px;
-    margin-top: 10px;
+    margin-left: 1300px;
     background: linear-gradient(to bottom, 
     #00cc66 0%, 
     #ff3300 14.29%,
@@ -246,12 +256,13 @@ a:hover {
     #6666ff 71.43%,
     #3399ff 85.71%,
     #99ccff 100%);
-} */
+    z-index: 1000;
+}
 
 button {
     background-color:  black;
     color: white;
-    width: 400px;
+    width: 390px;
     border-width: 3px;
     border-style: solid;
     border-color: white;
@@ -311,13 +322,26 @@ button:hover {
     #99ccff 100%);
 }
 
+.ticks {
+    color: black;
+    font-family: serif;
+    font-size: 4.2em;
+    margin-top: -54px;
+    margin-left: -100px;
+}
+
+.tick-labels {
+    color: black;
+    margin-left: 150px;
+}
+
 /* modal css */
 
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 5; /* Sit on top */
+    z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
     margin-top: -100px;
@@ -325,6 +349,7 @@ button:hover {
     height: 10000px; /* Full height */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 20000;
   }
   
   /* Modal Content/Box */
@@ -429,17 +454,4 @@ button:hover {
     font-size: 1.5em;
     margin: 20px;
     margin-top: 80px;
-}
-
-.ticks {
-    color: black;
-    font-family: serif;
-    font-size: 4.2em;
-    margin-top: -54px;
-    margin-left: 40px;
-}
-
-.tick-labels {
-    color: black;
-    margin-left: 300px;
 }
