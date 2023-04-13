@@ -165,6 +165,7 @@ a:hover {
 
 #color-guide {
     height: 2010px;
+    z-index: 3;
     width: 80px;
     position: absolute;
     text-align: center;
@@ -316,7 +317,7 @@ button:hover {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 5; /* Sit on top */
     left: 0;
     top: 0;
     margin-top: -100px;
