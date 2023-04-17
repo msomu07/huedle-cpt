@@ -11,16 +11,7 @@ let guessColors = ["black", "black", "black", "black", "black", "black", "black"
 
 //raw input variables
 //input from each guess
-let guess1Input = []; //each array holds the r, g, b of the guess
-let guess2Input = [];
-let guess3Input = [];
-let guess4Input = [];
-let guess5Input = [];
-let guess6Input = [];
-let guess7Input = [];
-let guess8Input = [];
-let guess9Input = [];
-let guess10Input = [];
+let guessInput = []; //each array holds the r, g, b of the guess
 
 var valid; //boolean checks if the input is valid
 let isColor1Correct = false;
@@ -42,90 +33,63 @@ function guess() { // numberentered
 	document.getElementById("message").innerHTML += "turn " + turnCounter + " " + answer1Values + " " + answer2Values + " " + answer3Values;
 	
 	if (turnCounter == 1) {
-		guess1Input[0] = document.getElementById("r1").value; //assigns raw input to the variables
-		guess1Input[1] = document.getElementById("g1").value;
-		guess1Input[2] = document.getElementById("b1").value;
-
-		valid = isValid(guess1Input[0], guess1Input[1], guess1Input[2]); //checks if the variables are valid
-		checkRGB(guess1Input[0], guess1Input[1], guess1Input[2]); //checks how correct the values are 
+		guessInput[0] = document.getElementById("r1").value; //assigns raw input to the variables
+		guessInput[1] = document.getElementById("g1").value;
+		guessInput[2] = document.getElementById("b1").value;
 	}
 
 	if (turnCounter == 2) {
-		guess2Input[0] = document.getElementById("r2").value;
-		guess2Input[1] = document.getElementById("g2").value;
-		guess2Input[2] = document.getElementById("b2").value;
-
-		valid = isValid(guess2Input[0], guess2Input[1], guess2Input[2]);
-		checkRGB(guess2Input[0], guess2Input[1], guess2Input[2]);
+		guessInput[0] = document.getElementById("r2").value;
+		guessInput[1] = document.getElementById("g2").value;
+		guessInput[2] = document.getElementById("b2").value;
 	}
 
 	if (turnCounter == 3) {
-		guess3Input[0] = document.getElementById("r3").value;
-		guess3Input[1] = document.getElementById("g3").value;
-		guess3Input[2] = document.getElementById("b3").value;
-
-		valid = isValid(guess3Input[0], guess3Input[1], guess3Input[2]);
-		checkRGB(guess3Input[0], guess3Input[1], guess3Input[2]);
+		guessInput[0] = document.getElementById("r3").value;
+		guessInput[1] = document.getElementById("g3").value;
+		guessInput[2] = document.getElementById("b3").value;
 	}
 
 	if (turnCounter == 4) {
-		guess4Input[0] = document.getElementById("r4").value;
-		guess4Input[1] = document.getElementById("g4").value;
-		guess4Input[2] = document.getElementById("b4").value;
-
-		valid = isValid(guess4Input[0], guess4Input[1], guess4Input[2]);
-		checkRGB(guess4Input[0], guess4Input[1], guess4Input[2]);
+		guessInput[0] = document.getElementById("r4").value;
+		guessInput[1] = document.getElementById("g4").value;
+		guessInput[2] = document.getElementById("b4").value;
 	}
 
 	if (turnCounter == 5) {
-		guess5Input[0] = document.getElementById("r5").value;
-		guess5Input[1] = document.getElementById("g5").value;
-		guess5Input[2] = document.getElementById("b5").value;
-
-		valid = isValid(guess5Input[0], guess5Input[1], guess5Input[2]);
-		checkRGB(guess5Input[0], guess5Input[1], guess5Input[2]);
+		guessInput[0] = document.getElementById("r5").value;
+		guessInput[1] = document.getElementById("g5").value;
+		guessInput[2] = document.getElementById("b5").value;
 	}
-
 	if (turnCounter == 6) {
-		guess6Input[0] = document.getElementById("r6").value;
-		guess6Input[1] = document.getElementById("g6").value;
-		guess6Input[2] = document.getElementById("b6").value;
-
-		valid = isValid(guess6Input[0], guess6Input[1], guess6Input[2]);
-		checkRGB(guess6Input[0], guess6Input[1], guess6Input[2]);
+		guessInput[0] = document.getElementById("r6").value;
+		guessInput[1] = document.getElementById("g6").value;
+		guessInput[2] = document.getElementById("b6").value;
 	}
 	if (turnCounter == 7) {
-		guess7Input[0] = document.getElementById("r7").value;
-		guess7Input[1] = document.getElementById("g7").value;
-		guess7Input[2] = document.getElementById("b7").value;
-
-		valid = isValid(guess7Input[0], guess7Input[1], guess7Input[2]);
-		checkRGB(guess7Input[0], guess7Input[1], guess7Input[2]);
-	}
+		guessInput[0] = document.getElementById("r7").value;
+		guessInput[1] = document.getElementById("g7").value;
+		guessInput[2] = document.getElementById("b7").value;
+}
 	if (turnCounter == 8) {
-		guess8Input[0] = document.getElementById("r8").value;
-		guess8Input[1] = document.getElementById("g8").value;
-		guess8Input[2] = document.getElementById("b8").value;
-
-		valid = isValid(guess8Input[0], guess8Input[1], guess8Input[2]);
-		checkRGB(guess8Input[0], guess8Input[1], guess8Input[2]);
+		guessInput[0] = document.getElementById("r8").value;
+		guessInput[1] = document.getElementById("g8").value;
+		guessInput[2] = document.getElementById("b8").value;
 	}
 	if (turnCounter == 9) {
-		guess9Input[0] = document.getElementById("r9").value;
-		guess9Input[1] = document.getElementById("g9").value;
-		guess9Input[2] = document.getElementById("b9").value;
-
-		valid = isValid(guess9Input[0], guess9Input[1], guess9Input[2]);
-		checkRGB(guess9Input[0], guess9Input[1], guess9Input[2]);
+		guessInput[0] = document.getElementById("r9").value;
+		guessInput[1] = document.getElementById("g9").value;
+		guessInput[2] = document.getElementById("b9").value;
 	}
 	if (turnCounter == 10) {
-		guess10Input[0] = document.getElementById("r10").value;
-		guess10Input[1] = document.getElementById("g10").value;
-		guess10Input[2] = document.getElementById("b10").value;
-
-		valid = isValid(guess10Input[0], guess10Input[1], guess10Input[2]);
-		checkRGB(guess10Input[0], guess10Input[1], guess10Input[2]);
+		guessInput[0] = document.getElementById("r10").value;
+		guessInput[1] = document.getElementById("g10").value;
+		guessInput[2] = document.getElementById("b10").value;
 	}
+	
+	valid = isValid(guessInput[0], guessInput[1], guessInput[2]); //checks if the variables are valid
+	checkRGB(guessInput[0], guessInput[1], guessInput[2]); //checks how correct the values are 
+	
 }
 
 function run() {
@@ -168,49 +132,13 @@ function isValid(r, g, b) {
 
 function checkRGB(r, g, b) { //checks how accurate rgb is
 	let errorMessage = "!isvalid error <br>";
-
+	
 	if (valid) {
-		disableInput(turnCounter);
-		if(turnCounter < 10) //checks if turnCounter is less than six to implement the enableInput
-			enableInput(); //enableInput doesn't need to be called on the last guess
-	
-		/*if (isColor1Correct) {
-			disableInput(1);
-			disableInput(2);
-			disableInput(3);
-			disableInput(4);
-			disableInput(5);
-			disableInput(6);
-	
-			if (!isColorCorrect)
-				enableNewInput(a);
-		}*/
-		
 		let hintSet1 = check1Vals(r, g, b);
 		let hintSet2 = check2Vals(r, g, b);
 		let hintSet3 = check3Vals(r, g, b);
 
 		let isWon = false;
-		
-		if(hintSet1[0] == "#00cc66" && hintSet1[1] == "#00cc66" && hintSet1[2] == "#00cc66")
-			isColor1Correct = true;
-		if(hintSet2[0] == "#00cc66" && hintSet2[1] == "#00cc66" && hintSet2[2] == "#00cc66")
-			isColor2Correct = true;
-		if(hintSet3[0] == "#00cc66" && hintSet3[1] == "#00cc66" && hintSet3[2] == "#00cc66")
-			isColor3Correct = true;
-		
-		if(isColor1Correct && isColor2Correct && isColor3Correct)
-			isWon = true;
-
-		if (isWon)
-			win();
-		else if (turnCounter >= 10)
-			lose();
-		
-		/*if (hintSet1[0] == "#00cc66" && hintSet1[1] == "#00cc66" && hintSet1[2] == "#00cc66")
-			win();
-		if ((thisGuess[0] != "#00cc66" || thisGuess[1] != "#00cc66" || thisGuess[2] != "#00cc66") && turnCounter == 10)
-			lose();*/
 			
 		document.getElementById("message").innerHTML += "r: " + hintSet1[0] + "<br>"; //checks r guess
 		document.getElementById("message").innerHTML += "g: " + hintSet1[1] + "<br>"; //checks g guess
@@ -244,6 +172,38 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		document.getElementById("g" + turnCounter + "b").value = g;  
 		document.getElementById("b" + turnCounter + "b").value = b; 
 	
+		if(hintSet1[0] == "#00cc66" && hintSet1[1] == "#00cc66" && hintSet1[2] == "#00cc66")
+			isColor1Correct = true;
+		if(hintSet2[0] == "#00cc66" && hintSet2[1] == "#00cc66" && hintSet2[2] == "#00cc66")
+			isColor2Correct = true;
+		if(hintSet3[0] == "#00cc66" && hintSet3[1] == "#00cc66" && hintSet3[2] == "#00cc66")
+			isColor3Correct = true;
+		
+		if(isColor1Correct && isColor2Correct && isColor3Correct)
+			isWon = true;
+
+		if (isWon)
+			win();
+		else if (turnCounter >= 10)
+			lose();
+		
+		if (isColor1Correct) {
+			disableInput(1);
+			disableInput(2);
+			disableInput(3);
+			disableInput(4);
+			disableInput(5);
+			disableInput(6);
+	
+			if(!isColor2Correct)
+				enableNewInput(a);
+		}
+		
+		disableInput(turnCounter);
+		if(turnCounter < 10 && !isColor1Correct) //checks if turnCounter is less than six to implement the enableInput
+			enableInput(); //enableInput doesn't need to be called on the last guess
+		
+		
 	}
 	else {
 		document.getElementById("message").innerHTML += errorMessage;
@@ -460,6 +420,10 @@ function selectRGB() {
 	while(Math.abs(answer2Values[2] - answer3Values[2]) < 50 || Math.abs(answer3Values[2] - answer1Values[2]) < 50)	
 }
 
+function disableButton() {
+	document.getElementById("click-to-check").disabled = true;
+}
+
 function error() {
 	var modal = document.getElementById("errorModal");
 	var span = document.getElementsByClassName("close")[0];
@@ -482,7 +446,6 @@ function win() {
 	var span = document.getElementsByClassName("close")[0];
 
 	document.getElementById("win-message").innerHTML = "<br> the exact answers are <br>" + answerColors[0] +  "<br>" + answerColors[1] +  "<br>" + answerColors[2];
-	//modal.style.backgroundColor(answerColor);
 	modal.style.display = "block";
 	span.onclick = function() {
 		modal.style.display = "none";
@@ -493,6 +456,15 @@ function win() {
 			modal.style.display = "none";
 		}
 	}
+		
+	disableInput(1);
+	disableInput(2);
+	disableInput(3);
+	disableInput(4);
+	disableInput(5);
+	disableInput(6);
+	
+	disableButton();
 }
 
 function lose() {
@@ -510,6 +482,15 @@ function lose() {
 			modal.style.display = "none";
 		}
 	}
+		
+	disableInput(1);
+	disableInput(2);
+	disableInput(3);
+	disableInput(4);
+	disableInput(5);
+	disableInput(6);
+	
+	disableButton();
 }
 
 function instructions() {

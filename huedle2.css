@@ -192,7 +192,16 @@ a:hover {
 .tick-labels {
     color: black;
     margin-left: 300px;
-}*/
+}
+
+#instruction-message {
+    color: black;
+    font-family: serif;
+    font-size: 1.5em;
+    margin: 20px;
+    margin-top: 80px;
+}
+*/
 
 /* s css */
 #circleCanvas{
@@ -207,7 +216,7 @@ a:hover {
 #input-div{
     position: absolute;
 	top: 150px;
-    left: 57%;
+    left: 56.5%;
 }
 
 .brbr {
@@ -311,6 +320,7 @@ button:hover {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 30px; 
     background: linear-gradient(to right, 
     #00cc66 0%, 
     #ff3300 14.29%,
@@ -333,6 +343,39 @@ button:hover {
 .tick-labels {
     color: black;
     margin-left: 150px;
+}
+
+.modal-content a {
+    color: black;
+    font-family: shalma;
+    font-size:  10.0em;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 240px;
+    margin-top: -100px;
+
+    /* animation code from stack overflow */
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+#instruction-message {
+    color: black;
+    font-family: serif;
+    font-size: 1.5em;
+    margin: 20px;
+    margin-top: 70px;
+}
+
+
+#quit {
+    margin-top: -130px;
+    float: right;
 }
 
 /* modal css */
@@ -378,25 +421,6 @@ button:hover {
     cursor: pointer;
   }
 
-.modal-content a {
-    color: black;
-    font-family: shalma;
-    font-size:  10.0em;
-    outline: none;
-    text-decoration: none;
-    text-align: center;
-    margin-left: 200px;
-    margin-right: 240px;
-    margin-top: -120px;
-
-    /* animation code from stack overflow */
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
-}
-
 .modal-content a:hover {
     animation-name: title-animation;
     animation-duration: 10s;
@@ -406,11 +430,6 @@ button:hover {
 #play-again {
     margin-top: 0px;
     float: left;
-}
-
-#quit {
-    margin-top: 0px;
-    float: right;
 }
 
 #win-message, #lose-message {
@@ -446,12 +465,4 @@ button:hover {
     font-size: 2.5em;
     text-align: center;
     margin-top: -220px;
-}
-
-#instruction-message {
-    color: black;
-    font-family: serif;
-    font-size: 1.5em;
-    margin: 20px;
-    margin-top: 80px;
 }

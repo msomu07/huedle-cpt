@@ -6,6 +6,11 @@
         <script src = "huedle2.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			input::-webkit-outer-spin-button,
+			input::-webkit-inner-spin-button {
+			display: none;}
+		</style>
     </head>
     <body>
         <div class = "header">
@@ -16,7 +21,7 @@
         <!--<p id="yum"></p>
         <input class="input" id="INPUTPUTPUT" placeholder="enter some stuff">-->
 		<div id="circle">
-			<canvas id="circleCanvas" width="1430" height="2150"></canvas> 
+			<canvas id="circleCanvas" width="800" height="2150"></canvas> 
 		</div>
 		<div id = "color-guide"></div>
 		<div id="input-div">
@@ -172,7 +177,7 @@
 				<input class="input" id="g10b" type="number" min="0" max="255" size="3" placeholder="G" disabled>
 				<input class="input" id="b10b" type="number" min="0" max="255" size="3" placeholder="B" disabled>
 			</div>
-			<button type="submit" onclick="guess()">click to check</button>
+			<button id="click-to-check" type="submit" onclick="guess()">click to check</button>
 		</div>
 		
 		<!-- Win Modal -->
@@ -216,22 +221,23 @@
 					|
 				</div>
 				<div class = "tick-labels">
-					<!--correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					< 15 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					< 25 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					< 50 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					< 100 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					< 150 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					< 200 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					> 200 away-->
-					correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					> 200 away
+					
+					<!--moog! correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					15 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					25 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					50 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					100 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					150 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					200 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					> 200 away
+					> 200 away-->
 				</div>
 				<!--<div class = "ticks" id="tick2">|</div>
 				<div class = "ticks" id="tick3">|</div>

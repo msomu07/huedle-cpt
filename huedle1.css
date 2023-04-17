@@ -110,7 +110,7 @@ a:hover,  #instructions:hover {
     animation-iteration-count: infinite;
 }
 
-/*s css
+/*s css*/
 #circleCanvas{
 	position: absolute;
     top: 140px;
@@ -142,7 +142,7 @@ button {
     text-align: center;
 
     /* animation code from stack overflow */
-   /* -o-transition:.5s;
+    -o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
     -webkit-transition:.5s;
@@ -196,9 +196,62 @@ button {
     font-family: shalma;
     font-size: 8.0em;
     margin-top: -50px;
-}*/
+}
 
-/*m css*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin-top: -120px;
+    width: 100%;
+    height: 10000px;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    color: black;
+    height: 600px;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+#instruction-message {
+    color: black;
+    font-family: serif;
+    font-size: 1.5em;
+    margin: 20px;
+    margin-top: 40px;
+}
+
+.ticks {
+    color: black;
+    font-family: serif;
+    font-size: 4.2em;
+    margin-top: -54px;
+}
+
+.tick-labels {
+    color: black;
+    margin-left: 150px;
+}
+
+#quit {
+    margin-top: -140px;
+    float: right;
+}
+
+#play-again {
+    margin-top: 30px;
+    float: left;
+}
+
+/*m css
 #circleCanvas{
 	position: absolute;
     top: 220px;
@@ -225,7 +278,7 @@ button {
     text-decoration: none;
     text-align: center;
     /* animation code from stack overflow */
-    -o-transition:.5s;
+    /*-o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
     -webkit-transition:.5s;
@@ -273,7 +326,59 @@ button {
     font-size: 8.0em;
     margin-top: -50px;
 }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin-top: -100px;
+    width: 100%;
+    height: 10000px;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+.modal-content {
+    background-color: #fefefe;
+    color: black;
+    height: 600px;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
 
+#instruction-message {
+    color: black;
+    font-family: serif;
+    font-size: 1.5em;
+    margin: 20px;
+    margin-top: 80px;
+}
+
+.ticks {
+    color: black;
+    font-family: serif;
+    font-size: 4.2em;
+    margin-top: -54px;
+}
+
+.tick-labels {
+    color: black;
+    margin-left: 250px;
+}
+
+#quit {
+    margin-top: 50px;
+    float: right;
+}
+
+#play-again {
+    margin-top: 50px;
+    float: left;
+}
+*/
 
 button:hover {
     animation-name: button-animation;
@@ -302,31 +407,6 @@ button:hover {
     #99ccff 100%);
 }
 /* modal css */
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    margin-top: -100px;
-    width: 100%; /* Full width */
-    height: 10000px; /* Full height */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    color: black;
-    height: 600px;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
   
   /* The Close Button */
   .close {
@@ -368,16 +448,6 @@ button:hover {
     animation-iteration-count: infinite;
 }
 
-#play-again {
-    margin-top: 50px;
-    float: left;
-}
-
-#quit {
-    margin-top: 50px;
-    float: right;
-}
-
 #win-message, #lose-message {
     color: black;
     font-family: serif;
@@ -411,25 +481,4 @@ button:hover {
     font-size: 2.5em;
     text-align: center;
     margin-top: -220px;
-}
-
-#instruction-message {
-    color: black;
-    font-family: serif;
-    font-size: 1.5em;
-    margin: 20px;
-    margin-top: 80px;
-}
-
-.ticks {
-    color: black;
-    font-family: serif;
-    font-size: 4.2em;
-    margin-top: -54px;
-    margin-left: 40px;
-}
-
-.tick-labels {
-    color: black;
-    margin-left: 300px;
 }
