@@ -5,8 +5,6 @@ let answer3Values = [];
 let answerColors = []; //holds all of the answer colors in one array for easy access
 let turnCounter = 0; //counts the number of turns for the labels
 
-let message = "";
-
 let guessColors = ["black", "black", "black", "black", "black", "black", "black", "black", "black", "black"];
 
 //raw input variables
@@ -22,15 +20,12 @@ let isColor3Correct = false;
 function guess() { // numberentered
 	++turnCounter; //checks turn number
 	
-	document.getElementById("message").innerHTML += answerColors[0] + " " + answerColors[1] + " " + answerColors[2] + "<br>";
-	
 	if(!isColor1Correct)
 		char = "a";
 	else if(!isColor2Correct)
 		char = "b";
 	else if(!isColor3Correct)
 		char = "c";
-	document.getElementById("message").innerHTML += "turn " + turnCounter + char + "<br>";
 	
 	if (turnCounter == 1) {
 		guessInput[0] = document.getElementById("r1" + char).value; //assigns raw input to the variables
@@ -83,8 +78,6 @@ function guess() { // numberentered
 		guessInput[2] = document.getElementById("b10" + char).value;
 	}
 	
-	document.getElementById("message").innerHTML += "guess input: " + guessInput[0] + " " + guessInput[1] + " " + guessInput[2] + "<br>";
-	
 	valid = isValid(guessInput[0], guessInput[1], guessInput[2]); //checks if the variables are valid
 	checkRGB(guessInput[0], guessInput[1], guessInput[2]); //checks how correct the values are 
 	
@@ -130,10 +123,6 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		let hintSet3 = check3Vals(r, g, b);
 
 		let isWon = false;
-			
-		document.getElementById("message").innerHTML += "r: " + hintSet1[0] + "<br>"; //checks r guess
-		document.getElementById("message").innerHTML += "g: " + hintSet1[1] + "<br>"; //checks g guess
-		document.getElementById("message").innerHTML += "b: " + hintSet1[2] + "<br>"; //checks b guess
 		
 		let thisColor = "rgb(" + r + "," + g + "," + b + ")";
 		
@@ -201,10 +190,8 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		if(turnCounter < 10){ //checks if turnCounter is less than 10 to implement the enableInput
 			if(!isColor1Correct)
 				enableInput("a");
-			else if(!isColor2Correct){
-				document.getElementById("message").innerHTML += "truu";
+			else if(!isColor2Correct)
 				enableInput("b");
-			}
 			else if(!isColor3Correct)
 				enableInput("c");
 		}
