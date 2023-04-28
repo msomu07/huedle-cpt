@@ -117,7 +117,7 @@ a:hover {
     animation-iteration-count: infinite;
 }
 
-/* m css */ /*
+/* m css */
 #circleCanvas{
 	position: absolute;
     padding-left: 0;
@@ -165,6 +165,7 @@ a:hover {
 
 #color-guide {
     height: 2010px;
+    z-index: 3;
     width: 80px;
     position: absolute;
     text-align: center;
@@ -181,30 +182,9 @@ a:hover {
     #3399ff 85.71%,
     #99ccff 100%);
 }
-.ticks {
-    color: black;
-    font-family: serif;
-    font-size: 4.2em;
-    margin-top: -54px;
-    margin-left: 40px;
-}
-
-.tick-labels {
-    color: black;
-    margin-left: 300px;
-}
-
-#instruction-message {
-    color: black;
-    font-family: serif;
-    font-size: 1.5em;
-    margin: 20px;
-    margin-top: 80px;
-}
-*/
 
 /* s css */
-#circleCanvas{
+/*#circleCanvas{
 	position: absolute;
     padding-left: 0;
     padding-right: 0;
@@ -216,7 +196,7 @@ a:hover {
 #input-div{
     position: absolute;
 	top: 150px;
-    left: 56.5%;
+    left: 60%;
 }
 
 .brbr {
@@ -250,12 +230,13 @@ a:hover {
 }
 
 #color-guide {
-    height: 2100px;
+    height: 2010px;
     width: 60px;
     position: absolute;
     text-align: center;
     padding-top: 60px;
-    margin-left: 1300px;
+    margin-left: 1600px;
+    margin-top: 10px;
     background: linear-gradient(to bottom, 
     #00cc66 0%, 
     #ff3300 14.29%,
@@ -265,13 +246,12 @@ a:hover {
     #6666ff 71.43%,
     #3399ff 85.71%,
     #99ccff 100%);
-    z-index: 1000;
-}
+} */
 
 button {
     background-color:  black;
     color: white;
-    width: 390px;
+    width: 400px;
     border-width: 3px;
     border-style: solid;
     border-color: white;
@@ -320,7 +300,6 @@ button:hover {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px; 
     background: linear-gradient(to right, 
     #00cc66 0%, 
     #ff3300 14.29%,
@@ -332,59 +311,13 @@ button:hover {
     #99ccff 100%);
 }
 
-.ticks {
-    color: black;
-    font-family: serif;
-    font-size: 4.2em;
-    margin-top: -54px;
-    margin-left: -100px;
-}
-
-.tick-labels {
-    color: black;
-    margin-left: 150px;
-}
-
-.modal-content a {
-    color: black;
-    font-family: shalma;
-    font-size:  10.0em;
-    outline: none;
-    text-decoration: none;
-    text-align: center;
-    margin-left: 200px;
-    margin-right: 240px;
-    margin-top: -100px;
-
-    /* animation code from stack overflow */
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
-}
-
-#instruction-message {
-    color: black;
-    font-family: serif;
-    font-size: 1.5em;
-    margin: 20px;
-    margin-top: 70px;
-}
-
-
-#quit {
-    margin-top: -130px;
-    float: right;
-}
-
 /* modal css */
 
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 5; /* Sit on top */
     left: 0;
     top: 0;
     margin-top: -100px;
@@ -392,16 +325,15 @@ button:hover {
     height: 10000px; /* Full height */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    z-index: 20000;
   }
   
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
     color: black;
-    height: 690px;
-    margin: 12% auto; /* 15% from the top and centered */
-    padding: 20px;
+    height: 550px;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 60px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
@@ -421,6 +353,25 @@ button:hover {
     cursor: pointer;
   }
 
+.modal-content a {
+    color: black;
+    font-family: shalma;
+    font-size:  10.0em;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 240px;
+    margin-top: -120px;
+
+    /* animation code from stack overflow */
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
 .modal-content a:hover {
     animation-name: title-animation;
     animation-duration: 10s;
@@ -430,6 +381,11 @@ button:hover {
 #play-again {
     margin-top: 0px;
     float: left;
+}
+
+#quit {
+    margin-top: 0px;
+    float: right;
 }
 
 #win-message, #lose-message {
@@ -465,4 +421,25 @@ button:hover {
     font-size: 2.5em;
     text-align: center;
     margin-top: -220px;
+}
+
+#instruction-message {
+    color: black;
+    font-family: serif;
+    font-size: 1.5em;
+    margin: 20px;
+    margin-top: 80px;
+}
+
+.ticks {
+    color: black;
+    font-family: serif;
+    font-size: 4.2em;
+    margin-top: -54px;
+    margin-left: 40px;
+}
+
+.tick-labels {
+    color: black;
+    margin-left: 300px;
 }

@@ -5,7 +5,12 @@ let turnCounter = 0; //counts the number of turns for the labels
 
 //raw input variables
 //input from each guess
-let guessInput = []; //each array holds the r, g, b of the guess
+let guess1Input = []; //each array holds the r, g, b of the guess
+let guess2Input = [];
+let guess3Input = [];
+let guess4Input = [];
+let guess5Input = [];
+let guess6Input = [];
 
 var valid; //boolean checks if the input is valid
 
@@ -16,44 +21,61 @@ let guessColors = ["black", "black", "black", "black", "black", "black"];
 function guess() { // numberentered
 	++turnCounter; //checks turn number
 	
+	//document.getElementById("message").innerHTML += "turn " + turnCounter + "<br>";
+	
 	if (turnCounter == 1) {
-		guessInput[0] = document.getElementById("r1").value; //assigns raw input to the variables
-		guessInput[1] = document.getElementById("g1").value;
-		guessInput[2] = document.getElementById("b1").value; 
+		guess1Input[0] = document.getElementById("r1").value; //assigns raw input to the variables
+		guess1Input[1] = document.getElementById("g1").value;
+		guess1Input[2] = document.getElementById("b1").value;
+
+		valid = isValid(guess1Input[0], guess1Input[1], guess1Input[2]); //checks if the variables are valid
+		checkRGB(guess1Input[0], guess1Input[1], guess1Input[2]); //checks how correct the values are 
 	}
 
 	if (turnCounter == 2) {
-		guessInput[0] = document.getElementById("r2").value;
-		guessInput[1] = document.getElementById("g2").value;
-		guessInput[2] = document.getElementById("b2").value;
+		guess2Input[0] = document.getElementById("r2").value;
+		guess2Input[1] = document.getElementById("g2").value;
+		guess2Input[2] = document.getElementById("b2").value;
+
+		valid = isValid(guess2Input[0], guess2Input[1], guess2Input[2]);
+		checkRGB(guess2Input[0], guess2Input[1], guess2Input[2]);
 	}
 
 	if (turnCounter == 3) {
-		guessInput[0] = document.getElementById("r3").value;
-		guessInput[1] = document.getElementById("g3").value;
-		guessInput[2] = document.getElementById("b3").value;
+		guess3Input[0] = document.getElementById("r3").value;
+		guess3Input[1] = document.getElementById("g3").value;
+		guess3Input[2] = document.getElementById("b3").value;
+
+		valid = isValid(guess3Input[0], guess3Input[1], guess3Input[2]);
+		checkRGB(guess3Input[0], guess3Input[1], guess3Input[2]);
 	}
 
 	if (turnCounter == 4) {
-		guessInput[0] = document.getElementById("r4").value;
-		guessInput[1] = document.getElementById("g4").value;
-		guessInput[2] = document.getElementById("b4").value;
+		guess4Input[0] = document.getElementById("r4").value;
+		guess4Input[1] = document.getElementById("g4").value;
+		guess4Input[2] = document.getElementById("b4").value;
+
+		valid = isValid(guess4Input[0], guess4Input[1], guess4Input[2]);
+		checkRGB(guess4Input[0], guess4Input[1], guess4Input[2]);
 	}
 
 	if (turnCounter == 5) {
-		guessInput[0] = document.getElementById("r5").value;
-		guessInput[1] = document.getElementById("g5").value;
-		guessInput[2] = document.getElementById("b5").value;
+		guess5Input[0] = document.getElementById("r5").value;
+		guess5Input[1] = document.getElementById("g5").value;
+		guess5Input[2] = document.getElementById("b5").value;
+
+		valid = isValid(guess5Input[0], guess5Input[1], guess5Input[2]);
+		checkRGB(guess5Input[0], guess5Input[1], guess5Input[2]);
 	}
 
 	if (turnCounter == 6) {
-		guessInput[0] = document.getElementById("r6").value;
-		guessInput[1] = document.getElementById("g6").value;
-		guessInput[2] = document.getElementById("b6").value;
+		guess6Input[0] = document.getElementById("r6").value;
+		guess6Input[1] = document.getElementById("g6").value;
+		guess6Input[2] = document.getElementById("b6").value;
+
+		valid = isValid(guess6Input[0], guess6Input[1], guess6Input[2]);
+		checkRGB(guess6Input[0], guess6Input[1], guess6Input[2]);
 	}
-	
-	valid = isValid(guessInput[0], guessInput[1], guessInput[2]); //checks if the variables are valid
-	checkRGB(guessInput[0], guessInput[1], guessInput[2]); //checks how correct the values are
 }
 
 function run() {
@@ -61,6 +83,7 @@ function run() {
 	selectRGB(); //selects answer color
 	answerColor = "rgb(" + answerValues[0] + ", " + answerValues[1] + ", " + answerValues[2] + ")"; //prints the rgb values 	
 	generateCircle(guessColors); //initializes circle values to all black
+	//document.getElementById("message").innerHTML += answerColor + " turn " + turnCounter + "<br>";
 }
 
 function enableInput() { //allows the user to enter guess values for the next turn in the input boxes
@@ -94,8 +117,18 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 	
 		
 		let thisGuess = [checkR(r), checkG(g), checkB(b)];
+
+		if (thisGuess[0] == "#00cc66" && thisGuess[1] == "#00cc66" && thisGuess[2] == "#00cc66")
+			win();
+		if ((thisGuess[0] != "#00cc66" || thisGuess[1] != "#00cc66" || thisGuess[2] != "#00cc66") && turnCounter == 6)
+			lose();
+			
+		/*document.getElementById("message").innerHTML += "r: " + thisGuess[0] + "<br>"; //checks r guess
+		document.getElementById("message").innerHTML += "g: " + thisGuess[1] + "<br>"; //checks g guess
+		document.getElementById("message").innerHTML += "b: " + thisGuess[2] + "<br>"; //checks b guess*/
 		
 		let thisColor = "rgb(" + r + "," + g + "," + b + ")";
+		//document.getElementById("message").innerHTML += "color: " + thisColor + "<br>";
 		
 		guessColors[turnCounter - 1] = thisColor;
 			
@@ -105,29 +138,25 @@ function checkRGB(r, g, b) { //checks how accurate rgb is
 		document.getElementById("g" + turnCounter).style.backgroundColor = thisGuess[1];  
 		document.getElementById("b" + turnCounter).style.backgroundColor = thisGuess[2];  
 
-		
-		if (thisGuess[0] == "#00cc66" && thisGuess[1] == "#00cc66" && thisGuess[2] == "#00cc66")
-			win();
-		if ((thisGuess[0] != "#00cc66" || thisGuess[1] != "#00cc66" || thisGuess[2] != "#00cc66") && turnCounter == 6)
-			lose();
-	
 	}
 	else {
+		//document.getElementById("message").innerHTML += errorMessage;
 		turnCounter--;
+		//document.getElementById("message").innerHTML += turnCounter;
 		error();
 	}
 }
 
-function disableButton() {
-	document.getElementById("click-to-check").disabled = true;
-}
-
 function error() {
 	var modal = document.getElementById("errorModal");
+	var span = document.getElementsByClassName("close")[0];
 
 	document.getElementById("error-message-continued").innerHTML = "check that each value is between 1<br>and 225 and that all values have been entered";
 
 	modal.style.display = "block";
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
 	  
 	window.onclick = function(event) {
 		if (event.target == modal)
@@ -140,7 +169,7 @@ function win() {
 	var span = document.getElementsByClassName("close")[0];
 
 	document.getElementById("win-message").innerHTML = "<br> the exact answer was " + answerColor;
-	
+	//modal.style.backgroundColor(answerColor);
 	modal.style.display = "block";
 	span.onclick = function() {
 		modal.style.display = "none";
@@ -151,15 +180,6 @@ function win() {
 			modal.style.display = "none";
 		}
 	}
-	
-	disableInput(1);
-	disableInput(2);
-	disableInput(3);
-	disableInput(4);
-	disableInput(5);
-	disableInput(6);
-	
-	disableButton();
 }
 
 function lose() {
@@ -178,15 +198,6 @@ function lose() {
 			modal.style.display = "none";
 		}
 	}
-	
-	disableInput(1);
-	disableInput(2);
-	disableInput(3);
-	disableInput(4);
-	disableInput(5);
-	disableInput(6);
-	
-	disableButton();
 }
 
 function instructions() {

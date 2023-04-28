@@ -6,12 +6,6 @@
         <script src = "huedle1.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		input::-webkit-outer-spin-button,
-		input::-webkit-inner-spin-button {
-        display: none;
-      }
-	</style>
     </head>
     <body>
         <div class = "header">
@@ -20,7 +14,7 @@
 			<button id="instructions" onclick="instructions()">instructions</button>
         </div>
 		<div id="circle">
-			<canvas id="circleCanvas" width="1000" height="660"></canvas> 
+			<canvas id="circleCanvas" width="1000" height="700"></canvas> 
 		</div>
 		<div id = "color-guide">
 			<div class = "color-guide-label">c</div>
@@ -67,8 +61,9 @@
 				<input class="input" id="b6" type="number" min="0" max="255" size="3" placeholder="B" disabled>
 			</div>
             <!-- add error for invalid number -->
-			<button id="click-to-check" type="submit" onclick="guess()">click to check</button>
+			<button type="submit" onclick="guess()">click to check</button>
 		</div>
+		<!--<p id="message"></p>-->
 
 		<!-- Win Modal -->
 		<div id="winModal" class="modal">
@@ -98,7 +93,8 @@
 				<div class = "ticks" id="tick1">
 					&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;
-					&nbsp;
+					&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;
 					
 					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -110,13 +106,13 @@
 					|
 				</div>
 				<div class = "tick-labels">
-					correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					< 15 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					< 25 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					< 50 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					< 100 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					< 150 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					< 200 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					correct&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					15 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					25 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					50 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					100 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					150 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					200 away&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					> 200 away
 				</div>
 				<!--<div class = "ticks" id="tick2">|</div>
@@ -136,9 +132,6 @@
 					✧ The diagram above demonstrates the colors that the
 					input boxes will turn depending on how far your guess 
 					is from the actual answer<br><br>
-						✧ The colors are similar to a hot-cold game in which
-						blues and purples are far away from the answer, but 
-						pinks and reds are closer<br><br>
 					✧ You can always refer to it on the game page by clicking 
 					the "instructions" button at the top or by looking at the
 					"color guide" on the right
@@ -155,6 +148,7 @@
 		<!-- Error Modal -->
 		<div id="errorModal" class="modal">
 			<div class="modal-content">
+				<span class="close">&times;</span>
 				<p id = "error">ERROR</p>
 				<p id = "error-message">invalid input</p>
 				<p id="error-message-continued"></p>
