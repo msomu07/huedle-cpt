@@ -415,23 +415,15 @@ function disableButton() {
 }
 
 function disableAllInput(char) {
-	disableInput(1, char);
-	disableInput(2, char);
-	disableInput(3, char);
-	disableInput(4, char);
-	disableInput(5, char);
-	disableInput(6, char);
-	disableInput(7, char);
-	disableInput(8, char);
-	disableInput(9, char);
-	disableInput(10, char);
+	for(let i = 1; i <= 10; i++)
+		disableInput(i, char);
 }
 
 function error() {
 	var modal = document.getElementById("errorModal");
 	var span = document.getElementsByClassName("close")[0];
 
-	document.getElementById("error-message-continued").innerHTML = "check that each value is between 1<br>and 225 and that all values have been entered";
+	document.getElementById("error-message-continued").innerHTML = "check that each value is between 1<br>and 255 and that all values have been entered";
 
 	modal.style.display = "block";
 	span.onclick = function() {
